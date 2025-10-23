@@ -1,4 +1,4 @@
-# CS520 Exercise 1: Prompting, Debugging, and Innovation for Code Generation with LLMs
+# CS520 Exercise 1: Prompting, Debugging and Innovation for Code Generation with LLMs
 
 This repository contains the complete implementation and results for CS520 Exercise 1, evaluating GPT-4o and Claude 3.5 Sonnet on code generation tasks using different prompting strategies.
 
