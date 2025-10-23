@@ -1,0 +1,56 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 1_select_problems.py
+Loading HumanEval dataset...
+Loaded 164 total problems
+
+Selecting 10 problems (mix of difficulty)...
+
+======================================================================
+SELECTED PROBLEMS SUMMARY
+======================================================================
+
+1. HumanEval/0
+   Function: def has_close_elements(numbers: List[float], threshold: float) -> bool:
+   Description: Check if in given list of numbers, are any two numbers closer to each other than...
+
+2. HumanEval/1
+   Function: def separate_paren_groups(paren_string: str) -> List[str]:
+   Description: Input to this function is a string containing multiple groups of nested parenthe...
+
+3. HumanEval/2
+   Function: def truncate_number(number: float) -> float:
+   Description: Given a positive floating point number, it can be decomposed into...
+
+4. HumanEval/10
+   Function: def is_palindrome(string: str) -> bool:
+   Description: Test if given string is a palindrome...
+
+5. HumanEval/16
+   Function: def count_distinct_characters(string: str) -> int:
+   Description: Given a string, find out how many distinct characters (regardless of case) does ...
+
+6. HumanEval/20
+   Function: def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:
+   Description: From a supplied list of numbers (of length at least two) select and return two t...
+
+7. HumanEval/25
+   Function: def factorize(n: int) -> List[int]:
+   Description: Return list of prime factors of given integer in the order from smallest to larg...
+
+8. HumanEval/50
+   Function: def encode_shift(s: str):
+   Description: returns encoded string by shifting every character by 5 in the alphabet....
+
+9. HumanEval/75
+   Function: def is_multiply_prime(a):
+   Description: Write a function that returns true if the given number is the multiplication of ...
+
+10. HumanEval/100
+   Function: def make_a_pile(n):
+   Description: Given a positive integer n, you have to make a pile of n levels of stones....
+
+======================================================================
+Saved 10 problems to data/selected_problems.jsonl
+
+Setup complete! Selected problems saved to data/
+- Problems: data/selected_problems.jsonl
+- Indices: data/selected_indices.json

@@ -1,0 +1,65 @@
+{
+  "part_2_summary": {
+    "title": "Prompt Refinement Results - Part 2",
+    "failure_cases_analyzed": 2,
+    "problems_affected": {
+      "case_1": "HumanEval/1 (separate_paren_groups) - Import failures across multiple strategies",
+      "case_2": "HumanEval/10 (make_palindrome) - Helper function not included"
+    },
+    "refinements_made": [
+      "Added explicit 'CRITICAL REQUIREMENTS' section to all prompts",
+      "Made imports the first step in all thinking/planning processes",
+      "Added 'Include ALL helper functions' instruction",
+      "Added 'Provide ONLY executable Python code' to prevent verbose output",
+      "Created specific checklists for each strategy type"
+    ],
+    "results_summary": {
+      "gpt4o": {
+        "cot": {
+          "original_pass_at_1": 0.9,
+          "refined_pass_at_1": 1.0,
+          "improvement": 0.09999999999999998,
+          "original_solved": "9/10",
+          "refined_solved": "10/10"
+        },
+        "self_planning": {
+          "original_pass_at_1": 1.0,
+          "refined_pass_at_1": 1.0,
+          "improvement": 0.0,
+          "original_solved": "10/10",
+          "refined_solved": "10/10"
+        },
+        "self_debugging": {
+          "original_pass_at_1": 0.7,
+          "refined_pass_at_1": 1.0,
+          "improvement": 0.30000000000000004,
+          "original_solved": "7/10",
+          "refined_solved": "10/10"
+        }
+      },
+      "claude": {
+        "cot": {
+          "original_pass_at_1": 0.6,
+          "refined_pass_at_1": 1.0,
+          "improvement": 0.4,
+          "original_solved": "6/10",
+          "refined_solved": "10/10"
+        },
+        "self_planning": {
+          "original_pass_at_1": 0.8,
+          "refined_pass_at_1": 1.0,
+          "improvement": 0.19999999999999996,
+          "original_solved": "8/10",
+          "refined_solved": "10/10"
+        },
+        "self_debugging": {
+          "original_pass_at_1": 0.6,
+          "refined_pass_at_1": 1.0,
+          "improvement": 0.4,
+          "original_solved": "6/10",
+          "refined_solved": "10/10"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,707 @@
+{
+  "gpt4o": {
+    "cot": {
+      "model": "gpt4o",
+      "strategy": "cot",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 9,
+      "problems_failed": 1,
+      "pass_at_k": {
+        "pass@1": 0.9
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/10",
+        "HumanEval/100",
+        "HumanEval/16",
+        "HumanEval/2",
+        "HumanEval/20",
+        "HumanEval/50",
+        "HumanEval/75"
+      ],
+      "failed_problems": [
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "task_id": "HumanEval/0",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    \"\"\"\n    numbers.sort()\n    for i in range(len(numbers) - 1):\n        if abs(numbers[i] - numbers[i + 1]) < threshold:\n            return True\n    return False",
+            "code_length": 369
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "task_id": "HumanEval/1",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    paren_string = paren_string.replace(\" \", \"\")\n    result = []\n    balance = 0\n    current_group = []\n\n    for char in paren_string:\n        current_group.append(char)\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n\n        if balance == 0 and current_group:\n            result.append(''.join(current_group))\n            current_group = []\n\n    return result",
+            "code_length": 497
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "task_id": "HumanEval/10",
+            "passed": true,
+            "error": null,
+            "completion": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string. \"\"\"\n    if is_palindrome(string):\n        return string\n    \n    for i in range(len(string)):\n        if is_palindrome(string[i:]):\n            return string + string[:i][::-1]\n    \n    return string  # This line is theoretically unreachable\n\n# Test cases\nprint(make_palindrome(''))      # Output: ''\nprint(make_palindrome('cat'))   # Output: 'catac'\nprint(make_palindrome('cata'))  # Output: 'catac'",
+            "code_length": 638
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "task_id": "HumanEval/100",
+            "passed": true,
+            "error": null,
+            "completion": "def make_a_pile(n):\n    pile = []\n    current_stones = n\n    for _ in range(n):\n        pile.append(current_stones)\n        if current_stones % 2 == 0:\n            current_stones += 2\n        else:\n            current_stones += 2\n    return pile\n\n# Example usage\nprint(make_a_pile(3))  # Output: [3, 5, 7]",
+            "code_length": 305
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "task_id": "HumanEval/16",
+            "passed": true,
+            "error": null,
+            "completion": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of \"\"\"\n    return len(set(string.lower()))\n\n# Example usage:\n# print(count_distinct_characters('xyzXYZ'))  # Output: 3\n# print(count_distinct_characters('Jerry'))   # Output: 4",
+            "code_length": 326
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "task_id": "HumanEval/2",
+            "passed": true,
+            "error": null,
+            "completion": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part",
+            "code_length": 423
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "task_id": "HumanEval/20",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List, Tuple\n\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    numbers.sort()\n    min_diff = float('inf')\n    closest_pair = (0.0, 0.0)\n    \n    for i in range(len(numbers) - 1):\n        diff = numbers[i + 1] - numbers[i]\n        if diff < min_diff:\n            min_diff = diff\n            closest_pair = (numbers[i], numbers[i + 1])\n    \n    return closest_pair",
+            "code_length": 407
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "task_id": "HumanEval/25",
+            "passed": false,
+            "error": "Function 'factorize' not found in generated code",
+            "completion": "# Error generating code: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-gDZrgPSnxKTiVGeCSOjgZJWy on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'requests', 'param': None, 'code': 'rate_limit_exceeded'}}",
+            "code_length": 484
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "task_id": "HumanEval/50",
+            "passed": true,
+            "error": null,
+            "completion": "def decode_shift(s: str):\n    \"\"\"\n    Takes as input a string encoded with the encode_shift function. Returns the decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+            "code_length": 219
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "task_id": "HumanEval/75",
+            "passed": true,
+            "error": null,
+            "completion": "def is_multiply_prime(a):\n    \"\"\"Returns true if the given number is the multiplication of 3 prime numbers and false otherwise.\"\"\"\n    if a < 2:\n        return False\n\n    # List of prime numbers less than 100\n    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n\n    # Check combinations of three primes\n    for i in range(len(primes)):\n        for j in range(i, len(primes)):\n            for k in range(j, len(primes)):\n                if primes[i] * primes[j] * primes[k] == a:\n                    return True\n    return False\n\n# Example usage\nprint(is_multiply_prime(30))  # True\nprint(is_multiply_prime(60))  # True\nprint(is_multiply_prime(100)) # False",
+            "code_length": 714
+          }
+        ]
+      }
+    },
+    "self_planning": {
+      "model": "gpt4o",
+      "strategy": "self_planning",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/10",
+        "HumanEval/100",
+        "HumanEval/16",
+        "HumanEval/2",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "task_id": "HumanEval/0",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    # Sort the list of numbers\n    numbers.sort()\n    \n    # Iterate through the sorted list and check the difference between consecutive elements\n    for i in range(len(numbers) - 1):\n        if numbers[i + 1] - numbers[i] < threshold:\n            return True\n    \n    return False",
+            "code_length": 379
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "task_id": "HumanEval/1",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef separate_paren_groups(paren_string: str) -> List[str]:\n    # Remove spaces from the input string\n    paren_string = paren_string.replace(\" \", \"\")\n    \n    # Initialize variables\n    result = []\n    current_group = []\n    balance = 0\n    \n    # Iterate over each character in the string\n    for char in paren_string:\n        # Add character to the current group\n        current_group.append(char)\n        \n        # Update balance\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n        \n        # If balance is zero, we have a complete group\n        if balance == 0:\n            result.append(''.join(current_group))\n            current_group = []  # Reset for the next group\n    \n    return result",
+            "code_length": 779
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "task_id": "HumanEval/10",
+            "passed": true,
+            "error": null,
+            "completion": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string. \"\"\"\n    if not string:\n        return ''\n    \n    # Start from the end of the string and find the longest palindromic suffix\n    for i in range(len(string)):\n        if is_palindrome(string[i:]):\n            # Append the reverse of the prefix before the palindromic suffix\n            return string + string[:i][::-1]\n    \n    return string  # This line is theoretically unreachable\n\n# Test cases\nprint(make_palindrome(''))      # Output: ''\nprint(make_palindrome('cat'))   # Output: 'catac'\nprint(make_palindrome('cata'))  # Output: 'catac'",
+            "code_length": 779
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "task_id": "HumanEval/100",
+            "passed": true,
+            "error": null,
+            "completion": "def make_a_pile(n):\n    stones = []\n    current_stones = n\n    for _ in range(n):\n        stones.append(current_stones)\n        if current_stones % 2 == 0:\n            current_stones += 2\n        else:\n            current_stones += 2\n    return stones\n\n# Example usage\nprint(make_a_pile(3))  # Output: [3, 5, 7]",
+            "code_length": 311
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "task_id": "HumanEval/16",
+            "passed": true,
+            "error": null,
+            "completion": "def count_distinct_characters(string: str) -> int:\n    # Convert the string to lowercase to ensure case insensitivity\n    string = string.lower()\n    # Use a set to store distinct characters\n    distinct_characters = set(string)\n    # Return the number of distinct characters\n    return len(distinct_characters)\n\n# Test cases\nprint(count_distinct_characters('xyzXYZ'))  # Output: 3\nprint(count_distinct_characters('Jerry'))   # Output: 4",
+            "code_length": 437
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "task_id": "HumanEval/2",
+            "passed": true,
+            "error": null,
+            "completion": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    \"\"\"\n    # Subtract the integer part from the number to get the decimal part\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n\n# Edge cases:\n# - If the number is an integer, the decimal part should be 0.0\n# - If the number is very close to an integer, ensure precision is handled correctly",
+            "code_length": 622
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "task_id": "HumanEval/20",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List, Tuple\n\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    # Sort the numbers to make it easier to find the closest pair\n    numbers.sort()\n    \n    # Initialize variables to store the minimum difference and the closest pair\n    min_diff = float('inf')\n    closest_pair = (0.0, 0.0)\n    \n    # Iterate through the sorted list and find the pair with the smallest difference\n    for i in range(len(numbers) - 1):\n        diff = numbers[i + 1] - numbers[i]\n        if diff < min_diff:\n            min_diff = diff\n            closest_pair = (numbers[i], numbers[i + 1])\n    \n    return closest_pair",
+            "code_length": 643
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "task_id": "HumanEval/25",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appears in factorization.\n    Input number should be equal to the product of all factors.\n    \"\"\"\n    factors = []\n    divisor = 2\n    while n >= 2:\n        while n % divisor == 0:\n            factors.append(divisor)\n            n //= divisor\n        divisor += 1\n    return factors",
+            "code_length": 528
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "task_id": "HumanEval/50",
+            "passed": true,
+            "error": null,
+            "completion": "def encode_shift(s: str) -> str:\n    \"\"\"\n    Returns encoded string by shifting every character by 5 in the alphabet.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) + 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])\n\ndef decode_shift(s: str) -> str:\n    \"\"\"\n    Takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+            "code_length": 425
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "task_id": "HumanEval/75",
+            "passed": true,
+            "error": null,
+            "completion": "def is_multiply_prime(a):\n    \"\"\"Returns true if the given number is the multiplication of 3 prime numbers and false otherwise.\"\"\"\n    \n    # List of prime numbers less than 100\n    primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]\n    \n    # Check all combinations of three different primes\n    for i in range(len(primes)):\n        for j in range(i + 1, len(primes)):\n            for k in range(j + 1, len(primes)):\n                if primes[i] * primes[j] * primes[k] == a:\n                    return True\n    return False\n\n# Example usage:\n# print(is_multiply_prime(30))  # Should return True\n# print(is_multiply_prime(60))  # Should return False",
+            "code_length": 705
+          }
+        ]
+      }
+    },
+    "self_debugging": {
+      "model": "gpt4o",
+      "strategy": "self_debugging",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 7,
+      "problems_failed": 3,
+      "pass_at_k": {
+        "pass@1": 0.7
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/100",
+        "HumanEval/16",
+        "HumanEval/2",
+        "HumanEval/20",
+        "HumanEval/50",
+        "HumanEval/75"
+      ],
+      "failed_problems": [
+        "HumanEval/1",
+        "HumanEval/10",
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "task_id": "HumanEval/0",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    \"\"\"\n    numbers.sort()\n    for i in range(len(numbers) - 1):\n        if abs(numbers[i] - numbers[i + 1]) < threshold:\n            return True\n    return False",
+            "code_length": 369
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "task_id": "HumanEval/1",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def separate_paren_groups(paren_string: str) -> List[str]:\n    result = []\n    current_group = []\n    balance = 0\n\n    for char in paren_string:\n        if char == ' ':\n            continue\n        current_group.append(char)\n        if char == '(':\n            balance += 1\n        elif char == ')':\n            balance -= 1\n\n        if balance == 0 and current_group:\n            result.append(''.join(current_group))\n            current_group = []\n\n    return result\n\n# Example usage\nprint(separate_paren_groups('( ) (( )) (( )( ))'))  # Output: ['()', '(())', '(()())']",
+            "code_length": 572
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "task_id": "HumanEval/10",
+            "passed": false,
+            "error": "NameError: name 'is_palindrome' is not defined",
+            "completion": "def make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string. \"\"\"\n    if not string:\n        return string\n    \n    # Check each suffix of the string to find the longest palindromic suffix\n    for i in range(len(string)):\n        if is_palindrome(string[i:]):\n            # Append the reverse of the prefix before the palindromic suffix\n            return string + string[:i][::-1]\n    return string\n\n# Test cases\nprint(make_palindrome(''))       # ''\nprint(make_palindrome('cat'))    # 'catac'\nprint(make_palindrome('cata'))   # 'catac'",
+            "code_length": 589
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "task_id": "HumanEval/100",
+            "passed": true,
+            "error": null,
+            "completion": "def make_a_pile(n):\n    pile = []\n    current_stones = n\n    for _ in range(n):\n        pile.append(current_stones)\n        if n % 2 == 0:\n            current_stones += 2\n        else:\n            current_stones += 2\n    return pile\n\n# Test cases\nprint(make_a_pile(3))  # [3, 5, 7]\nprint(make_a_pile(4))  # [4, 6, 8, 10]",
+            "code_length": 320
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "task_id": "HumanEval/16",
+            "passed": true,
+            "error": null,
+            "completion": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of \"\"\"\n    return len(set(string.lower()))\n\n# Edge cases and handling:\n# 1. Empty string: The function will return 0 as there are no characters.\n# 2. Case insensitivity: The function converts the string to lowercase, ensuring 'A' and 'a' are considered the same.\n# 3. Non-alphabetic characters: The function will count distinct non-alphabetic characters as well.",
+            "code_length": 512
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "task_id": "HumanEval/2",
+            "passed": true,
+            "error": null,
+            "completion": "def truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    \"\"\"\n    return number - int(number)\n\n# Test cases\nprint(truncate_number(3.5))  # Expected: 0.5\nprint(truncate_number(0.0))  # Expected: 0.0\nprint(truncate_number(5.999))  # Expected: 0.999\nprint(truncate_number(10.0))  # Expected: 0.0",
+            "code_length": 521
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "task_id": "HumanEval/20",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List, Tuple\n\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    if len(numbers) < 2:\n        raise ValueError(\"The list must contain at least two numbers.\")\n    \n    numbers.sort()\n    min_diff = float('inf')\n    closest_pair = (numbers[0], numbers[1])\n    \n    for i in range(len(numbers) - 1):\n        diff = numbers[i + 1] - numbers[i]\n        if diff < min_diff:\n            min_diff = diff\n            closest_pair = (numbers[i], numbers[i + 1])\n    \n    return closest_pair\n\n# Test cases\nprint(find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2]))  # (2.0, 2.2)\nprint(find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0]))  # (2.0, 2.0)",
+            "code_length": 687
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "task_id": "HumanEval/25",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appears in factorization.\n    Input number should be equal to the product of all factors.\n    \"\"\"\n    factors = []\n    # Check for number of 2s that divide n\n    while n % 2 == 0:\n        factors.append(2)\n        n //= 2\n    # n must be odd at this point, so a skip of 2 (i.e., i = i + 2) can be used\n    for i in range(3, int(n**0.5) + 1, 2):\n        # While i divides n, append i and divide n\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n    # If n is a prime number greater than 2, then append it\n    if n > 2:\n        factors.append(n)\n    return factors\n\n# 1. Potential bugs or edge cases:\n#    - Input is 1: The function should return an empty list since 1 has no prime factors.\n#    - Input is a prime number: The function should return a list containing the number itself.\n#    - Input is 0 or negative: The function should handle these gracefully, though typically factorization is defined for positive integers.\n\n# 2. Handling:\n#    - The function correctly handles the case where n is 1 by returning an empty list.\n#    - For prime numbers, the function will return the number itself as a factor.\n#    - The function does not explicitly handle 0 or negative numbers, as these are not typical inputs for factorization.\n\n# 3. The implementation is correct for the intended use cases (positive integers).",
+            "code_length": 1565
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "task_id": "HumanEval/50",
+            "passed": true,
+            "error": null,
+            "completion": "def encode_shift(s: str):\n    \"\"\"\n    Returns encoded string by shifting every character by 5 in the alphabet.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) + 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])\n\ndef decode_shift(s: str):\n    \"\"\"\n    Takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])\n\n# Example usage:\n# encoded = encode_shift(\"hello\")\n# decoded = decode_shift(encoded)\n# print(encoded)  # Output: \"mjqqt\"\n# print(decoded)  # Output: \"hello\"",
+            "code_length": 569
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "task_id": "HumanEval/75",
+            "passed": true,
+            "error": null,
+            "completion": "def is_multiply_prime(a):\n    def is_prime(n):\n        if n <= 1:\n            return False\n        if n <= 3:\n            return True\n        if n % 2 == 0 or n % 3 == 0:\n            return False\n        i = 5\n        while i * i <= n:\n            if n % i == 0 or n % (i + 2) == 0:\n                return False\n            i += 6\n        return True\n\n    if a < 2:\n        return False\n\n    primes = [i for i in range(2, a) if is_prime(i)]\n\n    for i in range(len(primes)):\n        for j in range(i, len(primes)):\n            for k in range(j, len(primes)):\n                if primes[i] * primes[j] * primes[k] == a:\n                    return True\n    return False\n\n# 1. Potential bugs or edge cases:\n#    - The function should handle numbers less than 2, which cannot be a product of three primes.\n#    - The function should correctly identify when a number is not a product of three primes.\n#    - The function should handle the upper limit of 100 correctly.\n\n# 2. Explanation:\n#    - The function first checks if the number is less than 2, returning False immediately.\n#    - It generates a list of prime numbers less than the given number.\n#    - It then checks all combinations of three primes to see if their product equals the given number.\n#    - If a valid combination is found, it returns True; otherwise, it returns False.\n\n# 3. The implementation is correct and handles the specified edge cases.",
+            "code_length": 1409
+          }
+        ]
+      }
+    }
+  },
+  "claude": {
+    "cot": {
+      "model": "claude",
+      "strategy": "cot",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 6,
+      "problems_failed": 4,
+      "pass_at_k": {
+        "pass@1": 0.6
+      },
+      "passed_problems": [
+        "HumanEval/10",
+        "HumanEval/100",
+        "HumanEval/16",
+        "HumanEval/2",
+        "HumanEval/50",
+        "HumanEval/75"
+      ],
+      "failed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/20",
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "task_id": "HumanEval/0",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n    for i in range(len(numbers)):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False",
+            "code_length": 502
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "task_id": "HumanEval/1",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\"\n    Separates groups of balanced parentheses into a list of strings.\n    \n    Args:\n        paren_string: A string containing multiple groups of nested parentheses.\n        \n    Returns:\n        A list of strings, each containing a balanced group of parentheses.\n    \"\"\"\n    # Remove spaces\n    paren_string = paren_string.replace(\" \", \"\")\n    \n    result = []\n    current_group = \"\"\n    depth = 0\n    \n    for char in paren_string:\n        if char == '(':\n            depth += 1\n            current_group += char\n        elif char == ')':\n            depth -= 1\n            current_group += char\n            \n            # If we've returned to depth 0, we've completed a group\n            if depth == 0:\n                result.append(current_group)\n                current_group = \"\"\n    \n    return result",
+            "code_length": 874
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "task_id": "HumanEval/10",
+            "passed": true,
+            "error": null,
+            "completion": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\n    if not string:\n        return \"\"\n    \n    # Find the longest palindromic suffix\n    for i in range(len(string), 0, -1):\n        if is_palindrome(string[:i]):\n            # If we found a palindromic suffix, append the reverse of the remaining prefix\n            return string + string[i:][::-1]\n    \n    # This should never happen as at minimum the first character is a palindrome\n    return string + string[1:][::-1]",
+            "code_length": 998
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "task_id": "HumanEval/100",
+            "passed": true,
+            "error": null,
+            "completion": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    result = [n]\n    \n    # Determine if n is odd or even\n    is_odd = n % 2 == 1\n    \n    for i in range(1, n):\n        if is_odd:\n            # If n is odd, add the next odd number\n            result.append(result[-1] + 2)\n        else:\n            # If n is even, add the next even number\n            result.append(result[-1] + 2)\n    \n    return result",
+            "code_length": 830
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "task_id": "HumanEval/16",
+            "passed": true,
+            "error": null,
+            "completion": "def count_distinct_characters(string: str) -> int:\n    \"\"\" Given a string, find out how many distinct characters (regardless of case) does it consist of\n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    # Convert string to lowercase to make it case-insensitive\n    lowercase_string = string.lower()\n    \n    # Use a set to count unique characters\n    unique_chars = set(lowercase_string)\n    \n    # Return the count of unique characters\n    return len(unique_chars)",
+            "code_length": 526
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "task_id": "HumanEval/2",
+            "passed": true,
+            "error": null,
+            "completion": "def truncate_number(number: float) -> float:\n    \"\"\"\n    Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    # Get the integer part by using int() which truncates toward zero\n    integer_part = int(number)\n    \n    # Return the decimal part by subtracting the integer part\n    return number - integer_part",
+            "code_length": 533
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "task_id": "HumanEval/20",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of numbers (of length at least two) select and return two that are the closest to each\n    other and return them in order (smaller number, larger number).\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n    if len(numbers) < 2:\n        raise ValueError(\"List must contain at least two numbers\")\n    \n    # Sort the list to make finding closest pairs easier\n    sorted_numbers = sorted(numbers)\n    \n    # Initialize with the first two elements\n    min_diff = float('inf')\n    closest_pair = (sorted_numbers[0], sorted_numbers[1])\n    \n    # Check each adjacent pair in the sorted list\n    for i in range(len(sorted_numbers) - 1):\n        current = sorted_numbers[i]\n        next_num = sorted_numbers[i + 1]\n        diff = next_num - current\n        \n        if diff < min_diff:\n            min_diff = diff\n            closest_pair = (current, next_num)\n    \n    return closest_pair",
+            "code_length": 1096
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "task_id": "HumanEval/25",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    factors = []\n    \n    # Handle 2 as a special case for efficiency\n    while n % 2 == 0:\n        factors.append(2)\n        n //= 2\n    \n    # Check odd numbers starting from 3\n    i = 3\n    while i * i <= n:\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n        i += 2\n    \n    # If n is a prime number greater than 2\n    if n > 1:\n        factors.append(n)\n    \n    return factors",
+            "code_length": 837
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "task_id": "HumanEval/50",
+            "passed": true,
+            "error": null,
+            "completion": "def decode_shift(s: str):\n    \"\"\"\n    takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+            "code_length": 209
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "task_id": "HumanEval/75",
+            "passed": true,
+            "error": null,
+            "completion": "def is_multiply_prime(a):\n    \"\"\"\n    Returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    Knowing that (a) is less than 100.\n    \"\"\"\n    # Generate primes up to sqrt(100)\n    def get_primes(n):\n        primes = []\n        sieve = [True] * (n + 1)\n        for p in range(2, n + 1):\n            if sieve[p]:\n                primes.append(p)\n                for i in range(p * p, n + 1, p):\n                    sieve[i] = False\n        return primes\n    \n    primes = get_primes(int(100 ** 0.5) + 1)\n    \n    # Check if a is a product of exactly 3 primes\n    prime_factors = []\n    \n    # Edge case: if a is 1 or negative, return False\n    if a <= 1:\n        return False\n    \n    # Find prime factors\n    for p in primes:\n        while a % p == 0:\n            prime_factors.append(p)\n            a //= p\n        if a == 1:\n            break\n    \n    # If a is not 1 after division by all primes up to sqrt(100),\n    # then a itself is a prime number\n    if a > 1:\n        prime_factors.append(a)\n    \n    # Return True if there are exactly 3 prime factors\n    return len(prime_factors) == 3",
+            "code_length": 1139
+          }
+        ]
+      }
+    },
+    "self_planning": {
+      "model": "claude",
+      "strategy": "self_planning",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 8,
+      "problems_failed": 2,
+      "pass_at_k": {
+        "pass@1": 0.8
+      },
+      "passed_problems": [
+        "HumanEval/10",
+        "HumanEval/100",
+        "HumanEval/16",
+        "HumanEval/2",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75"
+      ],
+      "failed_problems": [
+        "HumanEval/0",
+        "HumanEval/1"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "task_id": "HumanEval/0",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\"\n    Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    \n    Args:\n        numbers: List of float numbers to check\n        threshold: The maximum allowed difference between any two numbers\n        \n    Returns:\n        True if any two numbers are closer than threshold, False otherwise\n    \"\"\"\n    n = len(numbers)\n    \n    # Compare each pair of numbers\n    for i in range(n):\n        for j in range(i + 1, n):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    \n    return False",
+            "code_length": 652
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "task_id": "HumanEval/1",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\"\n    Separates groups of nested parentheses into separate strings.\n    \n    Args:\n        paren_string: A string containing multiple groups of nested parentheses.\n        \n    Returns:\n        A list of strings, each containing a balanced group of parentheses.\n    \"\"\"\n    # Remove all spaces from the input string\n    paren_string = paren_string.replace(\" \", \"\")\n    \n    result = []\n    stack = []\n    current_group = \"\"\n    \n    for char in paren_string:\n        current_group += char\n        \n        if char == '(':\n            stack.append(char)\n        elif char == ')':\n            stack.pop()\n            \n            # If stack is empty, we've completed a balanced group\n            if not stack:\n                result.append(current_group)\n                current_group = \"\"\n    \n    return result",
+            "code_length": 875
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "task_id": "HumanEval/10",
+            "passed": true,
+            "error": null,
+            "completion": "def is_palindrome(string: str) -> bool:\n    \"\"\" Test if given string is a palindrome \"\"\"\n    return string == string[::-1]\n\n\ndef make_palindrome(string: str) -> str:\n    \"\"\" Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\n    # Edge case: empty string is already a palindrome\n    if not string:\n        return \"\"\n    \n    # Find the longest palindromic suffix\n    for i in range(len(string), 0, -1):\n        if is_palindrome(string[:i]):\n            # If we found a palindromic suffix, append the reverse of the remaining prefix\n            return string + string[i:][::-1]\n    \n    # If no palindromic suffix found (should never happen as a single character is a palindrome)\n    return string + string[:-1][::-1]",
+            "code_length": 1069
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "task_id": "HumanEval/100",
+            "passed": true,
+            "error": null,
+            "completion": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    result = [n]\n    current = n\n    \n    for _ in range(n - 1):\n        if current % 2 == 0:  # If current is even\n            current += 2      # Next even number\n        else:                 # If current is odd\n            current += 2      # Next odd number\n        \n        result.append(current)\n    \n    return result",
+            "code_length": 799
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "task_id": "HumanEval/16",
+            "passed": true,
+            "error": null,
+            "completion": "def count_distinct_characters(string: str) -> int:\n    \"\"\"\n    Given a string, find out how many distinct characters (regardless of case) does it consist of\n    \n    Args:\n        string: The input string to analyze\n        \n    Returns:\n        The number of distinct characters in the string (case-insensitive)\n        \n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    # Convert string to lowercase to make it case-insensitive\n    lowercase_string = string.lower()\n    \n    # Use a set to count unique characters\n    unique_chars = set(lowercase_string)\n    \n    # Return the count of unique characters\n    return len(unique_chars)",
+            "code_length": 695
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "task_id": "HumanEval/2",
+            "passed": true,
+            "error": null,
+            "completion": "def truncate_number(number: float) -> float:\n    \"\"\"\n    Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    \n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    # Get the integer part by using int() which truncates toward zero\n    integer_part = int(number)\n    \n    # Return the decimal part by subtracting the integer part\n    return number - integer_part",
+            "code_length": 537
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "task_id": "HumanEval/20",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List, Tuple\n\ndef find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of numbers (of length at least two) select and return two that are the closest to each\n    other and return them in order (smaller number, larger number).\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n    if len(numbers) < 2:\n        raise ValueError(\"List must contain at least two numbers\")\n    \n    # Sort the list to make finding closest pairs easier\n    sorted_numbers = sorted(numbers)\n    \n    # Initialize with the first two elements\n    min_diff = float('inf')\n    closest_pair = (sorted_numbers[0], sorted_numbers[1])\n    \n    # Compare adjacent elements in the sorted list\n    for i in range(len(sorted_numbers) - 1):\n        current = sorted_numbers[i]\n        next_num = sorted_numbers[i + 1]\n        diff = abs(next_num - current)\n        \n        if diff < min_diff:\n            min_diff = diff\n            closest_pair = (current, next_num)\n    \n    return closest_pair",
+            "code_length": 1134
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "task_id": "HumanEval/25",
+            "passed": true,
+            "error": null,
+            "completion": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    factors = []\n    \n    # Handle edge case\n    if n <= 1:\n        return factors\n    \n    # Check for factor 2 first (optimization)\n    while n % 2 == 0:\n        factors.append(2)\n        n //= 2\n    \n    # Check for odd factors\n    i = 3\n    while i * i <= n:\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n        i += 2\n    \n    # If n is a prime number greater than 2\n    if n > 1:\n        factors.append(n)\n    \n    return factors",
+            "code_length": 914
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "task_id": "HumanEval/50",
+            "passed": true,
+            "error": null,
+            "completion": "def decode_shift(s: str):\n    \"\"\"\n    takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+            "code_length": 209
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "task_id": "HumanEval/75",
+            "passed": true,
+            "error": null,
+            "completion": "def is_multiply_prime(a):\n    \"\"\"\n    Returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    \n    Args:\n        a: An integer less than 100\n        \n    Returns:\n        bool: True if a is a product of exactly 3 prime numbers, False otherwise\n    \n    Example:\n        is_multiply_prime(30) == True  # 30 = 2 * 3 * 5\n    \"\"\"\n    # Handle edge cases\n    if a <= 1:\n        return False\n    \n    # Find all prime factors of a\n    prime_factors = []\n    \n    # Check if 2 is a factor\n    while a % 2 == 0:\n        prime_factors.append(2)\n        a //= 2\n    \n    # Check for other prime factors\n    factor = 3\n    while factor * factor <= a:\n        while a % factor == 0:\n            prime_factors.append(factor)\n            a //= factor\n        factor += 2\n    \n    # If a is a prime number greater than 2\n    if a > 2:\n        prime_factors.append(a)\n    \n    # Check if the number has exactly 3 prime factors (including duplicates)\n    return len(prime_factors) == 3",
+            "code_length": 1015
+          }
+        ]
+      }
+    },
+    "self_debugging": {
+      "model": "claude",
+      "strategy": "self_debugging",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 6,
+      "problems_failed": 4,
+      "pass_at_k": {
+        "pass@1": 0.6
+      },
+      "passed_problems": [
+        "HumanEval/10",
+        "HumanEval/100",
+        "HumanEval/16",
+        "HumanEval/2",
+        "HumanEval/50",
+        "HumanEval/75"
+      ],
+      "failed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/20",
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "task_id": "HumanEval/0",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def has_close_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Check if in given list of numbers, are any two numbers closer to each other than\n    given threshold.\n    >>> has_close_elements([1.0, 2.0, 3.0], 0.5)\n    False\n    >>> has_close_elements([1.0, 2.8, 3.0, 4.0, 5.0, 2.0], 0.3)\n    True\n    \"\"\"\n    for i in range(len(numbers)):\n        for j in range(i + 1, len(numbers)):\n            if abs(numbers[i] - numbers[j]) < threshold:\n                return True\n    return False",
+            "code_length": 502
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "task_id": "HumanEval/1",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def separate_paren_groups(paren_string: str) -> List[str]:\n    \"\"\"\n    Separates groups of nested parentheses into separate strings.\n    \n    Args:\n        paren_string: A string containing multiple groups of nested parentheses.\n        \n    Returns:\n        A list of strings, each containing a balanced group of parentheses.\n    \"\"\"\n    # Remove spaces from the input string\n    paren_string = paren_string.replace(\" \", \"\")\n    \n    result = []\n    current_group = \"\"\n    depth = 0\n    \n    for char in paren_string:\n        if char == '(':\n            depth += 1\n            current_group += char\n        elif char == ')':\n            depth -= 1\n            current_group += char\n            \n            # If we've returned to depth 0, we've completed a group\n            if depth == 0:\n                result.append(current_group)\n                current_group = \"\"\n    \n    return result",
+            "code_length": 893
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "task_id": "HumanEval/10",
+            "passed": true,
+            "error": null,
+            "completion": "def make_palindrome(string: str) -> str:\n    \"\"\"Find the shortest palindrome that begins with a supplied string.\n    Algorithm idea is simple:\n    - Find the longest postfix of supplied string that is a palindrome.\n    - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.\n    >>> make_palindrome('')\n    ''\n    >>> make_palindrome('cat')\n    'catac'\n    >>> make_palindrome('cata')\n    'catac'\n    \"\"\"\n    if not string:\n        return \"\"\n    \n    # Find the longest palindromic suffix\n    for i in range(len(string), 0, -1):\n        if is_palindrome(string[:i]):\n            # If we found a palindromic suffix, append the reverse of the remaining prefix\n            return string + string[i:][::-1]\n    \n    # If no palindromic suffix found (shouldn't happen as a single character is always a palindrome)\n    return string + string[:-1][::-1]",
+            "code_length": 893
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "task_id": "HumanEval/100",
+            "passed": true,
+            "error": null,
+            "completion": "def make_a_pile(n):\n    \"\"\"\n    Given a positive integer n, you have to make a pile of n levels of stones.\n    The first level has n stones.\n    The number of stones in the next level is:\n        - the next odd number if n is odd.\n        - the next even number if n is even.\n    Return the number of stones in each level in a list, where element at index\n    i represents the number of stones in the level (i+1).\n\n    Examples:\n    >>> make_a_pile(3)\n    [3, 5, 7]\n    \"\"\"\n    result = [n]\n    current = n\n    \n    for _ in range(n - 1):\n        if current % 2 == 0:  # If current is even\n            current += 2      # Next even number\n        else:                 # If current is odd\n            current += 2      # Next odd number\n        result.append(current)\n    \n    return result",
+            "code_length": 790
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "task_id": "HumanEval/16",
+            "passed": true,
+            "error": null,
+            "completion": "def count_distinct_characters(string: str) -> int:\n    \"\"\"\n    Given a string, find out how many distinct characters (regardless of case) does it consist of\n    \n    >>> count_distinct_characters('xyzXYZ')\n    3\n    >>> count_distinct_characters('Jerry')\n    4\n    \"\"\"\n    # Convert string to lowercase to make it case-insensitive\n    lowercase_string = string.lower()\n    \n    # Use a set to count unique characters\n    unique_chars = set(lowercase_string)\n    \n    return len(unique_chars)",
+            "code_length": 491
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "task_id": "HumanEval/2",
+            "passed": true,
+            "error": null,
+            "completion": "def truncate_number(number: float) -> float:\n    \"\"\"\n    Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    return number - int(number)",
+            "code_length": 363
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "task_id": "HumanEval/20",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def find_closest_elements(numbers: List[float]) -> Tuple[float, float]:\n    \"\"\" From a supplied list of numbers (of length at least two) select and return two that are the closest to each\n    other and return them in order (smaller number, larger number).\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.2])\n    (2.0, 2.2)\n    >>> find_closest_elements([1.0, 2.0, 3.0, 4.0, 5.0, 2.0])\n    (2.0, 2.0)\n    \"\"\"\n    if len(numbers) < 2:\n        raise ValueError(\"List must contain at least two numbers\")\n    \n    # Sort the list to make finding closest pairs easier\n    sorted_numbers = sorted(numbers)\n    \n    # Initialize with the first two elements\n    closest_pair = (sorted_numbers[0], sorted_numbers[1])\n    min_diff = abs(sorted_numbers[1] - sorted_numbers[0])\n    \n    # Check each adjacent pair in the sorted list\n    for i in range(1, len(sorted_numbers) - 1):\n        current_diff = abs(sorted_numbers[i+1] - sorted_numbers[i])\n        if current_diff < min_diff:\n            min_diff = current_diff\n            closest_pair = (sorted_numbers[i], sorted_numbers[i+1])\n    \n    return closest_pair",
+            "code_length": 1114
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "task_id": "HumanEval/25",
+            "passed": false,
+            "error": "NameError: name 'List' is not defined",
+            "completion": "def factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n    factors = []\n    \n    # Handle edge case of n <= 1\n    if n <= 1:\n        return factors\n    \n    # Check for factor 2 first (optimization)\n    while n % 2 == 0:\n        factors.append(2)\n        n //= 2\n    \n    # Check for odd factors\n    i = 3\n    while i * i <= n:\n        while n % i == 0:\n            factors.append(i)\n            n //= i\n        i += 2\n    \n    # If n is a prime number greater than 2\n    if n > 1:\n        factors.append(n)\n    \n    return factors",
+            "code_length": 899
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "task_id": "HumanEval/50",
+            "passed": true,
+            "error": null,
+            "completion": "def decode_shift(s: str):\n    \"\"\"\n    takes as input string encoded with encode_shift function. Returns decoded string.\n    \"\"\"\n    return \"\".join([chr(((ord(ch) - 5 - ord(\"a\")) % 26) + ord(\"a\")) for ch in s])",
+            "code_length": 209
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "task_id": "HumanEval/75",
+            "passed": true,
+            "error": null,
+            "completion": "def is_multiply_prime(a):\n    \"\"\"\n    Returns true if the given number is the multiplication of 3 prime numbers\n    and false otherwise.\n    \n    Args:\n        a: An integer less than 100\n        \n    Returns:\n        bool: True if a is a product of exactly 3 prime numbers, False otherwise\n    \"\"\"\n    # Handle edge cases\n    if a <= 1:\n        return False\n    \n    # Find all prime factors\n    prime_factors = []\n    \n    # Check for factor 2\n    while a % 2 == 0:\n        prime_factors.append(2)\n        a //= 2\n    \n    # Check for odd factors\n    factor = 3\n    while factor * factor <= a:\n        while a % factor == 0:\n            prime_factors.append(factor)\n            a //= factor\n        factor += 2\n    \n    # If a is a prime number greater than 2\n    if a > 2:\n        prime_factors.append(a)\n    \n    # Check if there are exactly 3 prime factors\n    return len(prime_factors) == 3",
+            "code_length": 896
+          }
+        ]
+      }
+    }
+  }
+}

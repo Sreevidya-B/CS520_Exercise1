@@ -1,0 +1,311 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 4_evaluate.py
+
+======================================================================
+EVALUATING ALL CONFIGURATIONS (k=1)
+======================================================================
+Loading problems...
+Loaded 10 problems
+
+======================================================================
+Evaluating: GPT4O - COT (k=1)
+======================================================================
+
+HumanEval/0:
+  Testing HumanEval/0 (HumanEval_0_0.py)... ✓
+
+HumanEval/1:
+  Testing HumanEval/1 (HumanEval_1_0.py)... ✓
+
+HumanEval/10:
+  Testing HumanEval/10 (HumanEval_10_0.py)... 
+catac
+catac
+✓
+
+HumanEval/100:
+  Testing HumanEval/100 (HumanEval_100_0.py)... [3, 5, 7]
+✓
+
+HumanEval/16:
+  Testing HumanEval/16 (HumanEval_16_0.py)... ✓
+
+HumanEval/2:
+  Testing HumanEval/2 (HumanEval_2_0.py)... ✓
+
+HumanEval/20:
+  Testing HumanEval/20 (HumanEval_20_0.py)... ✓
+
+HumanEval/25:
+  Testing HumanEval/25 (HumanEval_25_0.py)... ✗ (Function 'factorize' not found in generated code)
+
+HumanEval/50:
+  Testing HumanEval/50 (HumanEval_50_0.py)... ✓
+
+HumanEval/75:
+  Testing HumanEval/75 (HumanEval_75_0.py)... True
+False
+False
+✓
+
+======================================================================
+Results for GPT4O - COT:
+======================================================================
+Total problems: 10
+Problems solved (≥1 correct): 9
+Problems failed (all wrong): 1
+pass@1: 90.00%
+======================================================================
+
+======================================================================
+Evaluating: GPT4O - SELF_PLANNING (k=1)
+======================================================================
+
+HumanEval/0:
+  Testing HumanEval/0 (HumanEval_0_0.py)... ✓
+
+HumanEval/1:
+  Testing HumanEval/1 (HumanEval_1_0.py)... ✓
+
+HumanEval/10:
+  Testing HumanEval/10 (HumanEval_10_0.py)... 
+catac
+catac
+✓
+
+HumanEval/100:
+  Testing HumanEval/100 (HumanEval_100_0.py)... [3, 5, 7]
+✓
+
+HumanEval/16:
+  Testing HumanEval/16 (HumanEval_16_0.py)... 3
+4
+✓
+
+HumanEval/2:
+  Testing HumanEval/2 (HumanEval_2_0.py)... ✓
+
+HumanEval/20:
+  Testing HumanEval/20 (HumanEval_20_0.py)... ✓
+
+HumanEval/25:
+  Testing HumanEval/25 (HumanEval_25_0.py)... ✓
+
+HumanEval/50:
+  Testing HumanEval/50 (HumanEval_50_0.py)... ✓
+
+HumanEval/75:
+  Testing HumanEval/75 (HumanEval_75_0.py)... ✓
+
+======================================================================
+Results for GPT4O - SELF_PLANNING:
+======================================================================
+Total problems: 10
+Problems solved (≥1 correct): 10
+Problems failed (all wrong): 0
+pass@1: 100.00%
+======================================================================
+
+======================================================================
+Evaluating: GPT4O - SELF_DEBUGGING (k=1)
+======================================================================
+
+HumanEval/0:
+  Testing HumanEval/0 (HumanEval_0_0.py)... ✓
+
+HumanEval/1:
+  Testing HumanEval/1 (HumanEval_1_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/10:
+  Testing HumanEval/10 (HumanEval_10_0.py)... 
+✗ (NameError: name 'is_palindrome' is not defined)
+
+HumanEval/100:
+  Testing HumanEval/100 (HumanEval_100_0.py)... [3, 5, 7]
+[4, 6, 8, 10]
+✓
+
+HumanEval/16:
+  Testing HumanEval/16 (HumanEval_16_0.py)... ✓
+
+HumanEval/2:
+  Testing HumanEval/2 (HumanEval_2_0.py)... 0.5
+0.0
+0.9989999999999997
+0.0
+✓
+
+HumanEval/20:
+  Testing HumanEval/20 (HumanEval_20_0.py)... (2.0, 2.2)
+(2.0, 2.0)
+✓
+
+HumanEval/25:
+  Testing HumanEval/25 (HumanEval_25_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/50:
+  Testing HumanEval/50 (HumanEval_50_0.py)... ✓
+
+HumanEval/75:
+  Testing HumanEval/75 (HumanEval_75_0.py)... ✓
+
+======================================================================
+Results for GPT4O - SELF_DEBUGGING:
+======================================================================
+Total problems: 10
+Problems solved (≥1 correct): 7
+Problems failed (all wrong): 3
+pass@1: 70.00%
+======================================================================
+
+======================================================================
+Evaluating: CLAUDE - COT (k=1)
+======================================================================
+
+HumanEval/0:
+  Testing HumanEval/0 (HumanEval_0_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/1:
+  Testing HumanEval/1 (HumanEval_1_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/10:
+  Testing HumanEval/10 (HumanEval_10_0.py)... ✓
+
+HumanEval/100:
+  Testing HumanEval/100 (HumanEval_100_0.py)... ✓
+
+HumanEval/16:
+  Testing HumanEval/16 (HumanEval_16_0.py)... ✓
+
+HumanEval/2:
+  Testing HumanEval/2 (HumanEval_2_0.py)... ✓
+
+HumanEval/20:
+  Testing HumanEval/20 (HumanEval_20_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/25:
+  Testing HumanEval/25 (HumanEval_25_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/50:
+  Testing HumanEval/50 (HumanEval_50_0.py)... ✓
+
+HumanEval/75:
+  Testing HumanEval/75 (HumanEval_75_0.py)... ✓
+
+======================================================================
+Results for CLAUDE - COT:
+======================================================================
+Total problems: 10
+Problems solved (≥1 correct): 6
+Problems failed (all wrong): 4
+pass@1: 60.00%
+======================================================================
+
+======================================================================
+Evaluating: CLAUDE - SELF_PLANNING (k=1)
+======================================================================
+
+HumanEval/0:
+  Testing HumanEval/0 (HumanEval_0_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/1:
+  Testing HumanEval/1 (HumanEval_1_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/10:
+  Testing HumanEval/10 (HumanEval_10_0.py)... ✓
+
+HumanEval/100:
+  Testing HumanEval/100 (HumanEval_100_0.py)... ✓
+
+HumanEval/16:
+  Testing HumanEval/16 (HumanEval_16_0.py)... ✓
+
+HumanEval/2:
+  Testing HumanEval/2 (HumanEval_2_0.py)... ✓
+
+HumanEval/20:
+  Testing HumanEval/20 (HumanEval_20_0.py)... ✓
+
+HumanEval/25:
+  Testing HumanEval/25 (HumanEval_25_0.py)... ✓
+
+HumanEval/50:
+  Testing HumanEval/50 (HumanEval_50_0.py)... ✓
+
+HumanEval/75:
+  Testing HumanEval/75 (HumanEval_75_0.py)... ✓
+
+======================================================================
+Results for CLAUDE - SELF_PLANNING:
+======================================================================
+Total problems: 10
+Problems solved (≥1 correct): 8
+Problems failed (all wrong): 2
+pass@1: 80.00%
+======================================================================
+
+======================================================================
+Evaluating: CLAUDE - SELF_DEBUGGING (k=1)
+======================================================================
+
+HumanEval/0:
+  Testing HumanEval/0 (HumanEval_0_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/1:
+  Testing HumanEval/1 (HumanEval_1_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/10:
+  Testing HumanEval/10 (HumanEval_10_0.py)... ✓
+
+HumanEval/100:
+  Testing HumanEval/100 (HumanEval_100_0.py)... ✓
+
+HumanEval/16:
+  Testing HumanEval/16 (HumanEval_16_0.py)... ✓
+
+HumanEval/2:
+  Testing HumanEval/2 (HumanEval_2_0.py)... ✓
+
+HumanEval/20:
+  Testing HumanEval/20 (HumanEval_20_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/25:
+  Testing HumanEval/25 (HumanEval_25_0.py)... ✗ (NameError: name 'List' is not defined)
+
+HumanEval/50:
+  Testing HumanEval/50 (HumanEval_50_0.py)... ✓
+
+HumanEval/75:
+  Testing HumanEval/75 (HumanEval_75_0.py)... ✓
+
+======================================================================
+Results for CLAUDE - SELF_DEBUGGING:
+======================================================================
+Total problems: 10
+Problems solved (≥1 correct): 6
+Problems failed (all wrong): 4
+pass@1: 60.00%
+======================================================================
+
+======================================================================
+Evaluation complete! Results saved to results/evaluation_results.json
+======================================================================
+
+======================================================================
+SUMMARY TABLE (k=1)
+======================================================================
+Model        Strategy           pass@1     Solved    
+----------------------------------------------------------------------
+gpt4o        cot                90.0%      9/10      
+gpt4o        self_planning      100.0%     10/10     
+gpt4o        self_debugging     70.0%      7/10      
+claude       cot                60.0%      6/10      
+claude       self_planning      80.0%      8/10      
+claude       self_debugging     60.0%      6/10      
+======================================================================
+
+
+======================================================================
+EVALUATION COMPLETE!
+======================================================================
+Results saved to: results/evaluation_results.json
+======================================================================

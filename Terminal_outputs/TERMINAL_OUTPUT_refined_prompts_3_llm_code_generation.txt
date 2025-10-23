@@ -1,0 +1,196 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 3_llm_code_generation.py
+Directory structure created
+
+======================================================================
+GENERATING CODE FOR ALL CONFIGURATIONS (k=1)
+======================================================================
+Total experiments: 10 problems × 2 LLMs × 6 strategies × 1 solutions = 120
+======================================================================
+
+
+======================================================================
+STRATEGY: COT
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  ✓ HumanEval/0 (already generated 1 solutions)
+  ✓ HumanEval/1 (already generated 1 solutions)
+  ✓ HumanEval/10 (already generated 1 solutions)
+  ✓ HumanEval/100 (already generated 1 solutions)
+  ✓ HumanEval/16 (already generated 1 solutions)
+  ✓ HumanEval/2 (already generated 1 solutions)
+  ✓ HumanEval/20 (already generated 1 solutions)
+  ✓ HumanEval/25 (already generated 1 solutions)
+  ✓ HumanEval/50 (already generated 1 solutions)
+  ✓ HumanEval/75 (already generated 1 solutions)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  ✓ HumanEval/0 (already generated 1 solutions)
+  ✓ HumanEval/1 (already generated 1 solutions)
+  ✓ HumanEval/10 (already generated 1 solutions)
+  ✓ HumanEval/100 (already generated 1 solutions)
+  ✓ HumanEval/16 (already generated 1 solutions)
+  ✓ HumanEval/2 (already generated 1 solutions)
+  ✓ HumanEval/20 (already generated 1 solutions)
+  ✓ HumanEval/25 (already generated 1 solutions)
+  ✓ HumanEval/50 (already generated 1 solutions)
+  ✓ HumanEval/75 (already generated 1 solutions)
+
+======================================================================
+STRATEGY: SELF_PLANNING
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  ✓ HumanEval/0 (already generated 1 solutions)
+  ✓ HumanEval/1 (already generated 1 solutions)
+  ✓ HumanEval/10 (already generated 1 solutions)
+  ✓ HumanEval/100 (already generated 1 solutions)
+  ✓ HumanEval/16 (already generated 1 solutions)
+  ✓ HumanEval/2 (already generated 1 solutions)
+  ✓ HumanEval/20 (already generated 1 solutions)
+  ✓ HumanEval/25 (already generated 1 solutions)
+  ✓ HumanEval/50 (already generated 1 solutions)
+  ✓ HumanEval/75 (already generated 1 solutions)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  ✓ HumanEval/0 (already generated 1 solutions)
+  ✓ HumanEval/1 (already generated 1 solutions)
+  ✓ HumanEval/10 (already generated 1 solutions)
+  ✓ HumanEval/100 (already generated 1 solutions)
+  ✓ HumanEval/16 (already generated 1 solutions)
+  ✓ HumanEval/2 (already generated 1 solutions)
+  ✓ HumanEval/20 (already generated 1 solutions)
+  ✓ HumanEval/25 (already generated 1 solutions)
+  ✓ HumanEval/50 (already generated 1 solutions)
+  ✓ HumanEval/75 (already generated 1 solutions)
+
+======================================================================
+STRATEGY: SELF_DEBUGGING
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  ✓ HumanEval/0 (already generated 1 solutions)
+  ✓ HumanEval/1 (already generated 1 solutions)
+  ✓ HumanEval/10 (already generated 1 solutions)
+  ✓ HumanEval/100 (already generated 1 solutions)
+  ✓ HumanEval/16 (already generated 1 solutions)
+  ✓ HumanEval/2 (already generated 1 solutions)
+  ✓ HumanEval/20 (already generated 1 solutions)
+  ✓ HumanEval/25 (already generated 1 solutions)
+  ✓ HumanEval/50 (already generated 1 solutions)
+  ✓ HumanEval/75 (already generated 1 solutions)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  ✓ HumanEval/0 (already generated 1 solutions)
+  ✓ HumanEval/1 (already generated 1 solutions)
+  ✓ HumanEval/10 (already generated 1 solutions)
+  ✓ HumanEval/100 (already generated 1 solutions)
+  ✓ HumanEval/16 (already generated 1 solutions)
+  ✓ HumanEval/2 (already generated 1 solutions)
+  ✓ HumanEval/20 (already generated 1 solutions)
+  ✓ HumanEval/25 (already generated 1 solutions)
+  ✓ HumanEval/50 (already generated 1 solutions)
+  ✓ HumanEval/75 (already generated 1 solutions)
+
+======================================================================
+STRATEGY: COT_REFINED
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 378 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 932 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 909 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 302 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 309 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 437 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 933 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 881 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 487 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 1039 chars)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 527 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 1054 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 1077 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 833 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 401 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 422 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 1134 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 876 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 487 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 1018 chars)
+
+======================================================================
+STRATEGY: SELF_PLANNING_REFINED
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 547 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 1274 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 753 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 756 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 587 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 437 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 710 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 865 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 598 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 781 chars)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 541 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 1018 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 1131 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 833 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 549 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 542 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 1089 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 989 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 440 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 2609 chars)
+
+======================================================================
+STRATEGY: SELF_DEBUGGING_REFINED
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 378 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 506 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 431 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 246 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 206 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 373 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 538 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 541 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 425 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 593 chars)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 528 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 1082 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 1027 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 776 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 309 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 373 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 932 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 848 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 426 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 962 chars)
+
+======================================================================
+GENERATION COMPLETE: 120/120 solutions generated
+======================================================================
+
+Generated code saved to: generated_code/
+======================================================================

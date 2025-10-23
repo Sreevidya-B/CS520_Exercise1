@@ -1,0 +1,108 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 3_llm_code_generation.py
+Directory structure created
+
+======================================================================
+GENERATING CODE FOR ALL CONFIGURATIONS (k=1)
+======================================================================
+Total experiments: 10 problems × 2 LLMs × 3 strategies × 1 solutions = 60
+======================================================================
+
+
+======================================================================
+STRATEGY: COT
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 383 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 511 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 652 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 319 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 340 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 437 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 421 chars)
+  Generating HumanEval/25 (k=1)... 
+  Error with GPT-4o (attempt 1/1): Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4o in organization org-gDZrgPSnxKTiVGeCSOjgZJWy on requests per min (RPM): Limit 3, Used 3, Requested 1. Please try again in 20s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'requests', 'param': None, 'code': 'rate_limit_exceeded'}}
+(1 solutions, avg 484 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 233 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 728 chars)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 516 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 888 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 1012 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 844 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 540 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 547 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 1110 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 851 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 223 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 1153 chars)
+
+======================================================================
+STRATEGY: SELF_PLANNING
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 393 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 793 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 793 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 325 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 437 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 636 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 657 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 542 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 439 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 719 chars)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 666 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 889 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 1083 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 813 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 709 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 551 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 1148 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 928 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 223 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 1029 chars)
+
+======================================================================
+STRATEGY: SELF_DEBUGGING
+======================================================================
+
+  Model: GPT4O
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 1251 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 1521 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 1617 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 1130 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 526 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 1446 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 1417 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 1565 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 1540 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 1423 chars)
+
+  Model: CLAUDE
+  ------------------------------------------------------------
+  Generating HumanEval/0 (k=1)... (1 solutions, avg 1408 chars)
+  Generating HumanEval/1 (k=1)... (1 solutions, avg 1530 chars)
+  Generating HumanEval/10 (k=1)... (1 solutions, avg 2283 chars)
+  Generating HumanEval/100 (k=1)... (1 solutions, avg 1974 chars)
+  Generating HumanEval/16 (k=1)... (1 solutions, avg 943 chars)
+  Generating HumanEval/2 (k=1)... (1 solutions, avg 1595 chars)
+  Generating HumanEval/20 (k=1)... (1 solutions, avg 1736 chars)
+  Generating HumanEval/25 (k=1)... (1 solutions, avg 1589 chars)
+  Generating HumanEval/50 (k=1)... (1 solutions, avg 1420 chars)
+  Generating HumanEval/75 (k=1)... (1 solutions, avg 2276 chars)
+
+======================================================================
+GENERATION COMPLETE: 60/60 solutions generated
+======================================================================
+
+Generated code saved to: generated_code/
+======================================================================

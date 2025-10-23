@@ -1,0 +1,101 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 7_compare_results.py
+==========================================================================================
+PART 2: RESULTS COMPARISON & ANALYSIS
+==========================================================================================
+
+==========================================================================================
+COMPARISON: ORIGINAL VS REFINED PROMPTS (Part 2 Results)
+==========================================================================================
+
+Model      Strategy             Original     Refined      Change    
+------------------------------------------------------------------------------------------
+gpt4o      cot                  90.0%        100.0%       +10.0%    
+gpt4o      self_planning        100.0%       100.0%       +0.0%     
+gpt4o      self_debugging       70.0%        100.0%       +30.0%    
+claude     cot                  60.0%        100.0%       +40.0%    
+claude     self_planning        80.0%        100.0%       +20.0%    
+claude     self_debugging       60.0%        100.0%       +40.0%    
+==========================================================================================
+
+Average Improvement: +23.3%
+
+Top 3 Improvements:
+  1. CLAUDE cot: +40.0%
+  2. CLAUDE self_debugging: +40.0%
+  3. GPT4O self_debugging: +30.0%
+
+==========================================================================================
+FAILURE CASE ANALYSIS
+==========================================================================================
+
+CASE 1: HumanEval/1 (separate_paren_groups) - Import Failures
+------------------------------------------------------------------------------------------
+
+GPT-4o Self-Debugging:
+  Original: FAIL - NameError: name 'List' is not defined
+  Refined:  PASS
+
+Claude CoT:
+  Original: FAIL - NameError: name 'List' is not defined
+  Refined:  PASS
+
+Claude Self-Debugging:
+  Original: FAIL - NameError: name 'List' is not defined
+  Refined:  PASS
+
+==========================================================================================
+CASE 2: HumanEval/10 (make_palindrome) - Helper Function Issue
+------------------------------------------------------------------------------------------
+
+GPT-4o Self-Debugging:
+  Original: FAIL - NameError: name 'is_palindrome' is not defined
+  Refined:  PASS
+
+==========================================================================================
+CLAUDE SYSTEMATIC IMPORT ISSUES - BEFORE vs AFTER
+==========================================================================================
+
+COT:
+------------------------------------------------------------
+  HumanEval/0: FIXED
+  HumanEval/1: FIXED
+  HumanEval/20: FIXED
+  HumanEval/25: FIXED
+
+  Summary:
+    Original failures: 4/4
+    Refined failures:  0/4
+    Fixed: 4/4 problems
+    Fix rate: 100%
+
+SELF_PLANNING:
+------------------------------------------------------------
+  HumanEval/0: FIXED
+  HumanEval/1: FIXED
+  HumanEval/20: Was passing
+  HumanEval/25: Was passing
+
+  Summary:
+    Original failures: 2/4
+    Refined failures:  0/4
+    Fixed: 2/4 problems
+    Fix rate: 100%
+
+SELF_DEBUGGING:
+------------------------------------------------------------
+  HumanEval/0: FIXED
+  HumanEval/1: FIXED
+  HumanEval/20: FIXED
+  HumanEval/25: FIXED
+
+  Summary:
+    Original failures: 4/4
+    Refined failures:  0/4
+    Fixed: 4/4 problems
+    Fix rate: 100%
+
+Summary report saved: results/part2_summary.json
+
+==========================================================================================
+ANALYSIS COMPLETE!
+==========================================================================================

@@ -1,0 +1,25 @@
+{
+  "part_3_summary": {
+    "strategy_name": "Iterative Test-Driven Agent",
+    "description": "Multi-shot code generation with real test execution feedback",
+    "max_iterations": 3,
+    "results": {
+      "gpt4o": {
+        "baseline_cot": 0.9,
+        "baseline_best": 1.0,
+        "refined_best": 1.0,
+        "novel_strategy": 1.0,
+        "first_try_success": 10,
+        "avg_iterations": 0.0
+      },
+      "claude": {
+        "baseline_cot": 0.6,
+        "baseline_best": 0.8,
+        "refined_best": 1.0,
+        "novel_strategy": 1.0,
+        "first_try_success": 10,
+        "avg_iterations": 0.0
+      }
+    }
+  }
+}

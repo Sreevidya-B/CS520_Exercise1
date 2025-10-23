@@ -1,0 +1,85 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 9_analyze_novel_strategy.py
+==========================================================================================
+PART 3: NOVEL STRATEGY ANALYSIS
+==========================================================================================
+
+==========================================================================================
+PART 3: NOVEL STRATEGY COMPARISON
+==========================================================================================
+
+Model      Strategy                            Pass@1     Notes                    
+------------------------------------------------------------------------------------------
+
+GPT4O:
+           Part 1: CoT (baseline)            90.0%      Single-shot
+           Part 1: Self-Planning             100.0%     Single-shot
+           Part 1: Self-Debugging            70.0%      Single-shot
+           Part 2: CoT Refined               100.0%     Single-shot
+           Part 2: Self-Planning Refined     100.0%     Single-shot
+           Part 2: Self-Debugging Refined    100.0%     Single-shot
+           Part 3: Iterative Agent           100.0%     Multi-shot (10/10 first-try)
+
+CLAUDE:
+           Part 1: CoT (baseline)            60.0%      Single-shot
+           Part 1: Self-Planning             80.0%      Single-shot
+           Part 1: Self-Debugging            60.0%      Single-shot
+           Part 2: CoT Refined               100.0%     Single-shot
+           Part 2: Self-Planning Refined     100.0%     Single-shot
+           Part 2: Self-Debugging Refined    100.0%     Single-shot
+           Part 3: Iterative Agent           100.0%     Multi-shot (10/10 first-try)
+
+==========================================================================================
+
+==========================================================================================
+ITERATION USAGE ANALYSIS
+==========================================================================================
+
+GPT4O:
+------------------------------------------------------------
+  Solved on first try (0 iterations):  10/10
+  Solved after 1 iteration:            0/10
+  Solved after 2 iterations:           0/10
+  Solved after 3 iterations:           0/10
+  Failed after max iterations:         0/10
+
+CLAUDE:
+------------------------------------------------------------
+  Solved on first try (0 iterations):  10/10
+  Solved after 1 iteration:            0/10
+  Solved after 2 iterations:           0/10
+  Solved after 3 iterations:           0/10
+  Failed after max iterations:         0/10
+
+==========================================================================================
+STRATEGY EFFECTIVENESS ANALYSIS
+==========================================================================================
+
+GPT4O:
+------------------------------------------------------------
+  Worst baseline (Part 1):     70.0%
+  Novel strategy (Part 3):     100.0%
+  Improvement:                 +30.0%
+
+CLAUDE:
+------------------------------------------------------------
+  Worst baseline (Part 1):     60.0%
+  Novel strategy (Part 3):     100.0%
+  Improvement:                 +40.0%
+
+==========================================================================================
+PROBLEMS FIXED BY ITERATIVE FEEDBACK
+==========================================================================================
+
+GPT4O:
+------------------------------------------------------------
+  No problems required iteration (all passed first try)
+
+CLAUDE:
+------------------------------------------------------------
+  No problems required iteration (all passed first try)
+
+Summary saved to: results/part3_summary.json
+
+==========================================================================================
+ANALYSIS COMPLETE!
+==========================================================================================
