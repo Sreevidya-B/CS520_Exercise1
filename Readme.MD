@@ -31,7 +31,7 @@ OPENAI_API_KEY="your-openai-key-here"
 ANTHROPIC_API_KEY="your-anthropic-key-here"
 ```
 
-Run all scripts in sequence to reproduce the entire experiment:
+Run all scripts in sequence to reproduce the entire exercise:
 
 ```bash
 # Part 1: Initial Evaluation
