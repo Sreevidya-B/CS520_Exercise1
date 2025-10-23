@@ -1,0 +1,43 @@
+REFINED SELF-PLANNING PROMPT TEMPLATE
+================================================================================
+
+Description: Adds explicit import and completeness checklist
+
+Changes Made:
+  1. Added 'MANDATORY CHECKLIST' as first step
+  2. Made imports the #1 item in checklist
+  3. Added explicit 'All helper functions included' check
+  4. Added function signature verification step
+  5. Added 'Now implement starting with imports' instruction
+
+================================================================================
+TEMPLATE:
+================================================================================
+
+Before implementing, let's create a detailed plan:
+
+Problem: {problem_prompt}
+
+MANDATORY CHECKLIST:
+Step 1: Identify required imports (typing, math, etc.)
+Step 2: List all helper functions that must be included
+Step 3: Choose data structures
+Step 4: Design algorithm
+Step 5: Identify edge cases
+
+Detailed Plan:
+1. IMPORTS NEEDED:
+   - List all typing imports required (e.g., from typing import List, Tuple)
+   - List any other modules needed
+
+2. HELPER FUNCTIONS:
+   - What helper functions are provided in the problem?
+   - Include them ALL in the solution
+
+3. ALGORITHM:
+   - Step-by-step algorithm for the main function
+
+4. EDGE CASES:
+   - What edge cases need handling?
+
+Now implement your plan. Start with imports, then all helper functions, then the main function:

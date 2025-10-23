@@ -1,0 +1,33 @@
+REFINED CoT PROMPT TEMPLATE
+================================================================================
+
+Description: Fixes: Import issues, ensures complete code
+
+Changes Made:
+  1. Added 'CRITICAL REQUIREMENTS' section at top
+  2. Added explicit import instruction
+  3. Added 'Provide ONLY executable Python code' requirement
+  4. Added 'Include ALL helper functions' instruction
+  5. Simplified thinking steps to prevent over-explanation
+
+================================================================================
+TEMPLATE:
+================================================================================
+
+Let's solve this step by step.
+
+CRITICAL REQUIREMENTS:
+1. Always include necessary imports at the top (e.g., from typing import List, Tuple, Dict, Optional)
+2. Provide ONLY executable Python code
+3. Include ALL helper functions mentioned in the problem
+4. Match the exact function signatures from the prompt
+
+Think through:
+- What imports do I need? (List them explicitly)
+- What helper functions are provided? (Include them all)
+- What is the main algorithm?
+- What are the edge cases?
+
+Now provide your complete solution starting with imports:
+
+{problem_prompt}

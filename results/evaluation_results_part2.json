@@ -1,0 +1,1043 @@
+{
+  "gpt4o": {
+    "cot": {
+      "model": "gpt4o",
+      "strategy": "cot",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 9,
+      "problems_failed": 1,
+      "pass_at_k": {
+        "pass@1": 0.9
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": false,
+            "error": "Function 'factorize' not found in generated code"
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_planning": {
+      "model": "gpt4o",
+      "strategy": "self_planning",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_debugging": {
+      "model": "gpt4o",
+      "strategy": "self_debugging",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 7,
+      "problems_failed": 3,
+      "pass_at_k": {
+        "pass@1": 0.7
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/2",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [
+        "HumanEval/1",
+        "HumanEval/10",
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": false,
+            "error": "NameError: name 'is_palindrome' is not defined"
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "cot_refined": {
+      "model": "gpt4o",
+      "strategy": "cot_refined",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_planning_refined": {
+      "model": "gpt4o",
+      "strategy": "self_planning_refined",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_debugging_refined": {
+      "model": "gpt4o",
+      "strategy": "self_debugging_refined",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    }
+  },
+  "claude": {
+    "cot": {
+      "model": "claude",
+      "strategy": "cot",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 6,
+      "problems_failed": 4,
+      "pass_at_k": {
+        "pass@1": 0.6
+      },
+      "passed_problems": [
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/20",
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_planning": {
+      "model": "claude",
+      "strategy": "self_planning",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 8,
+      "problems_failed": 2,
+      "pass_at_k": {
+        "pass@1": 0.8
+      },
+      "passed_problems": [
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [
+        "HumanEval/0",
+        "HumanEval/1"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_debugging": {
+      "model": "claude",
+      "strategy": "self_debugging",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 6,
+      "problems_failed": 4,
+      "pass_at_k": {
+        "pass@1": 0.6
+      },
+      "passed_problems": [
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/20",
+        "HumanEval/25"
+      ],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": false,
+            "error": "NameError: name 'List' is not defined"
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "cot_refined": {
+      "model": "claude",
+      "strategy": "cot_refined",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_planning_refined": {
+      "model": "claude",
+      "strategy": "self_planning_refined",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    },
+    "self_debugging_refined": {
+      "model": "claude",
+      "strategy": "self_debugging_refined",
+      "total_problems": 10,
+      "k": 1,
+      "problems_solved": 10,
+      "problems_failed": 0,
+      "pass_at_k": {
+        "pass@1": 1.0
+      },
+      "passed_problems": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/2",
+        "HumanEval/10",
+        "HumanEval/16",
+        "HumanEval/20",
+        "HumanEval/25",
+        "HumanEval/50",
+        "HumanEval/75",
+        "HumanEval/100"
+      ],
+      "failed_problems": [],
+      "detailed_results": {
+        "HumanEval/0": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/1": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/2": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/10": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/16": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/20": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/25": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/50": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/75": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ],
+        "HumanEval/100": [
+          {
+            "passed": true,
+            "error": null
+          }
+        ]
+      }
+    }
+  }
+}

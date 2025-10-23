@@ -1,0 +1,119 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 8_novel_strategy.py
+======================================================================
+PART 3: Novel Strategy: ITERATIVE TEST-DRIVEN AGENT
+======================================================================
+Max iterations per problem: 3
+======================================================================
+
+======================================================================
+RUNNING ITERATIVE AGENT: GPT4O
+======================================================================
+
+
+HumanEval/0:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/1:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/2:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/10:
+  Iteration 0: Generating initial code...
+
+catac
+catac
+Passed on first attempt!
+
+HumanEval/16:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/20:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/25:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/50:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/75:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/100:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+----------------------------------------------------------------------
+Summary for GPT4O:
+  Total: 10
+  Passed: 10 (100.0%)
+  First-try success: 10
+  Avg iterations (for solved): 0.00
+----------------------------------------------------------------------
+
+======================================================================
+RUNNING ITERATIVE AGENT: CLAUDE
+======================================================================
+
+
+HumanEval/0:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/1:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/2:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/10:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/16:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/20:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/25:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/50:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/75:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+HumanEval/100:
+  Iteration 0: Generating initial code...
+Passed on first attempt!
+
+----------------------------------------------------------------------
+Summary for CLAUDE:
+  Total: 10
+  Passed: 10 (100.0%)
+  First-try success: 10
+  Avg iterations (for solved): 0.00
+----------------------------------------------------------------------
+
+======================================================================
+Results saved to: results/novel_strategy_results.json
+======================================================================

@@ -1,0 +1,16 @@
+(venv) sreevidyabol_umass_edu@gypsum-gpu182:~/CS520_Exercise1$ python 2_generate_prompts.py
+Loading selected problems...
+Loaded 10 problems
+
+Generating prompts for each strategy...
+Generated 10 prompts for Chain-of-Thought (CoT)
+Generated 10 prompts for Self-Planning
+Generated 10 prompts for Self-Debugging
+
+Saving prompts to files...
+   Saved to: prompts/cot_prompts.json
+   Saved to: prompts/self_planning_prompts.json
+   Saved to: prompts/self_debugging_prompts.json
+
+Prompt generation complete!
+Prompts saved to prompts/ directory

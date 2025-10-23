@@ -1,0 +1,31 @@
+REFINED SELF-DEBUGGING PROMPT TEMPLATE
+================================================================================
+
+Description: Explicit completeness check, code-only output
+
+Changes Made:
+  1. Added 'COMPLETENESS CHECKLIST' before debugging
+  2. Explicitly listed 'Missing imports' as first common error
+  3. Added 'Missing helper functions' as second common error
+  4. Added 'Provide ONLY the final code' to prevent verbose output
+  5. Changed from 'debug/fix' mindset to 'implement completely' mindset
+
+================================================================================
+TEMPLATE:
+================================================================================
+
+{problem_prompt}
+
+COMPLETENESS CHECKLIST - Verify before submission:
+1. All necessary imports included (from typing import ...)
+2. All helper functions from problem included
+3. Function signatures exactly match the prompt
+4. No explanatory text outside code blocks
+5. Common errors checked:
+   - Missing imports
+   - Missing helper functions
+   - Incorrect function name
+   - Off-by-one errors
+   - Empty input handling
+
+Now provide ONLY the final, complete Python code starting with imports:
