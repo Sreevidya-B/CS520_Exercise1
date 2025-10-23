@@ -23,9 +23,8 @@ This project evaluates two LLMs (GPT-4o and Claude 3.5 Sonnet) on 10 HumanEval b
 
 ### Complete Pipeline (All Parts)
 
-**Configure API keys**
+**Configure API keys in .env file**
 ```bash
-cp  .env
 # Edit .env and add your API keys:
 OPENAI_API_KEY="your-openai-key-here"
 ANTHROPIC_API_KEY="your-anthropic-key-here"
