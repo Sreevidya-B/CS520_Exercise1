@@ -1,0 +1,30 @@
+PS S:\Code\CS520_Exercise1> python exercise2\part1_baseline_coverage.py   
+Setting up test suites...
+Created test files in: S:\Code\CS520_Exercise1\exercise2\tests\original
+
+Running coverage analysis...
+
+Collected 58 results
+Generating reports...
+
+============================================================
+PROBLEM SELECTION FOR PARTS 2-3
+============================================================
+
+Problem 10:
+  Model/Strategy: gpt4o/cot
+  Test Pass: 100.0%
+  Branch Coverage: 83.3%
+  Gap Metric: 16.67
+  Improvement Potential: 1 uncovered branches
+
+Problem 20:
+  Model/Strategy: gpt4o/self_debugging
+  Test Pass: 100.0%
+  Branch Coverage: 83.3%
+  Gap Metric: 16.67
+  Improvement Potential: 1 uncovered branches
+============================================================
+
+Analysis complete. Results: S:\Code\CS520_Exercise1\exercise2\results\part1_coverage
+Selected problems for Parts 2-3: 10, 20

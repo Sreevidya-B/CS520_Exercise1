@@ -1,0 +1,86 @@
+{
+  "selection_method": {
+    "formula": "|test% - branch%| \u00d7 test%",
+    "approach": "Select 2 problems with largest coverage gaps",
+    "filter": "test_pass >= 80% AND 0% < branch_coverage < 100%",
+    "rationale": "Problems must have existing branches with room for improvement"
+  },
+  "selected_problems": [
+    "10",
+    "20"
+  ],
+  "selection_details": [
+    {
+      "problem_num": "10",
+      "gap_metric": 16.67,
+      "best_solution": {
+        "model": "gpt4o",
+        "strategy": "cot",
+        "gap_metric": 16.67,
+        "test_pass": 100.0,
+        "branch_cov": 83.33,
+        "branches_total": 6,
+        "branches_uncovered": 1
+      },
+      "improvement_potential": "1 uncovered branches",
+      "all_candidate_solutions": 2
+    },
+    {
+      "problem_num": "20",
+      "gap_metric": 16.67,
+      "best_solution": {
+        "model": "gpt4o",
+        "strategy": "self_debugging",
+        "gap_metric": 16.67,
+        "test_pass": 100.0,
+        "branch_cov": 83.33,
+        "branches_total": 6,
+        "branches_uncovered": 1
+      },
+      "improvement_potential": "1 uncovered branches",
+      "all_candidate_solutions": 4
+    }
+  ],
+  "all_candidates_ranked": [
+    {
+      "problem_num": "10",
+      "gap_metric": 16.67,
+      "test_pass": 100.0,
+      "branch_cov": 83.33,
+      "model": "gpt4o",
+      "strategy": "cot"
+    },
+    {
+      "problem_num": "20",
+      "gap_metric": 16.67,
+      "test_pass": 100.0,
+      "branch_cov": 83.33,
+      "model": "gpt4o",
+      "strategy": "self_debugging"
+    },
+    {
+      "problem_num": "1",
+      "gap_metric": 12.5,
+      "test_pass": 100.0,
+      "branch_cov": 87.5,
+      "model": "gpt4o",
+      "strategy": "cot"
+    },
+    {
+      "problem_num": "25",
+      "gap_metric": 10.0,
+      "test_pass": 100.0,
+      "branch_cov": 90.0,
+      "model": "claude",
+      "strategy": "self_planning"
+    },
+    {
+      "problem_num": "75",
+      "gap_metric": 10.0,
+      "test_pass": 100.0,
+      "branch_cov": 90.0,
+      "model": "gpt4o",
+      "strategy": "cot"
+    }
+  ]
+}

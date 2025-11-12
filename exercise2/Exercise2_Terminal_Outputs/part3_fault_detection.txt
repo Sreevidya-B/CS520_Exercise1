@@ -1,0 +1,45 @@
+PS S:\Code\CS520_Exercise1> python exercise2\part3_fault_detection.py
+Starting Part 3: Fault Detection Check
+============================================================
+
+Problem 10 (gpt4o/cot):
+----------------------------------------
+  Testing bug: off_by_one...
+    ✓ Bug DETECTED (10 tests failed)
+  Testing bug: wrong_boundary...
+    ✓ Bug DETECTED (10 tests failed)
+  Testing bug: reversed_logic...
+    ✓ Bug DETECTED (10 tests failed)
+  Testing bug: missing_empty_check...
+    ✓ Bug DETECTED (10 tests failed)
+  Testing bug: wrong_slice...
+    ✓ Bug DETECTED (10 tests failed)
+
+Summary:
+  Bugs tested: 5
+  Bugs detected: 5
+  Bugs missed: 0
+  Detection rate: 100.0%
+
+Problem 20 (gpt4o/self_debugging):
+----------------------------------------
+  Testing bug: comparison_operator...
+    ✓ Bug DETECTED (4 tests failed)
+  Testing bug: missing_self_check...
+    ✓ Bug DETECTED (4 tests failed)
+  Testing bug: wrong_sort...
+    ✓ Bug DETECTED (4 tests failed)
+  Testing bug: initialization_error...
+    ✓ Bug DETECTED (4 tests failed)
+  Testing bug: index_start...
+    ✓ Bug DETECTED (4 tests failed)
+
+Summary:
+  Bugs tested: 5
+  Bugs detected: 5
+  Bugs missed: 0
+  Detection rate: 100.0%
+
+============================================================
+Generating combined summary...
+Summary saved to: S:\Code\CS520_Exercise1\exercise2\results\part3_fault_detection\part3_summary.json

@@ -1,0 +1,106 @@
+{
+  "problem_num": "2",
+  "model": "gpt4o",
+  "strategy": "cot",
+  "baseline_coverage": {
+    "line": 100.0,
+    "branch": 0
+  },
+  "final_coverage": {
+    "line": 100.0,
+    "branch": 0
+  },
+  "total_iterations": 3,
+  "total_improvement": {
+    "line": 0.0,
+    "branch": 0
+  },
+  "converged": true,
+  "iterations": [
+    {
+      "iteration": 0,
+      "description": "Baseline (HumanEval tests only)",
+      "line_coverage": 100.0,
+      "branch_coverage": 0,
+      "tests_passed": 1,
+      "tests_failed": 0,
+      "num_tests": 1,
+      "new_tests_added": 0,
+      "prompt": null
+    },
+    {
+      "iteration": 1,
+      "description": "LLM-generated tests (iteration 1)",
+      "line_coverage": 100.0,
+      "branch_coverage": 0,
+      "lines_covered": 4,
+      "lines_total": 4,
+      "branches_covered": 0,
+      "branches_total": 0,
+      "tests_passed": 13,
+      "tests_failed": 5,
+      "num_tests": 18,
+      "new_tests_added": 17,
+      "duplicates_removed": 0,
+      "branch_improvement": 0,
+      "line_improvement": 0.0,
+      "prompt": "You are an expert software testing engineer. Generate comprehensive pytest unit tests to improve code coverage.\n\nProblem Statement:\n\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\nFunction to Test:\n```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n```\n\nCurrent Coverage:\n- Branch Coverage: 0.0%\n- Line Coverage: 100.0%\n\nTask:\nGenerate a comprehensive pytest test suite that increases branch coverage. Focus on:\n\n1. Edge Cases: Empty inputs, None values, boundary conditions\n2. Error Paths: Invalid inputs that should raise exceptions\n3. Branch Coverage: Test all conditional paths (if/else branches)\n4. Data Variations: Different data types, sizes, and patterns\n\nOutput Format:\nProvide ONLY valid Python pytest code with no markdown formatting or explanations.\nInclude:\n- Necessary imports (pytest, etc.)\n- Multiple test functions with descriptive names\n- Use pytest.raises() for exception testing\n- Comments explaining what each test validates\n\nGenerate at least 8-12 distinct test cases covering different scenarios.",
+      "llm_response": "```python\nimport pytest\nimport math\n\ndef test_truncate_number_positive_float():\n    # Test basic positive float with decimal part\n    assert truncate_number(3.5) == 0.5\n    assert truncate_number(10.75) == 0.75\n    assert truncate_number(1.1) == 0.1\n\ndef test_truncate_number_whole_numbers():\n    # Test whole numbers (should return 0.0)\n    assert truncate_number(5.0) == 0.0\n    assert truncate_number(10.0) == 0.0\n    assert truncate_number(1.0) == 0.0\n\ndef test_truncate_number_small_positive():\n    # Test numbers between 0 and 1\n    assert truncate_number(0.5) == 0.5\n    assert truncate_number(0.99) == 0.99\n    assert truncate_number(0.01) == 0.01\n\ndef test_truncate_number_zero():\n    # Test zero input\n    assert truncate_number(0.0) == 0.0\n\ndef test_truncate_number_large_numbers():\n    # Test large numbers\n    assert truncate_number(1000.25) == 0.25\n    assert truncate_number(999999.123) == 0.123\n\ndef test_truncate_number_very_small_decimals():\n    # Test very small decimal parts\n    result = truncate_number(5.000001)\n    assert abs(result - 0.000001) < 1e-10\n\ndef test_truncate_number_precision():\n    # Test floating point precision edge cases\n    assert abs(truncate_number(2.7) - 0.7) < 1e-10\n    assert abs(truncate_number(1.3) - 0.3) < 1e-10\n\ndef test_truncate_number_negative_float():\n    # Test negative numbers (though docstring says positive)\n    assert truncate_number(-3.5) == 0.5\n    assert truncate_number(-1.7) == 0.3\n\ndef test_truncate_number_negative_whole():\n    # Test negative whole numbers\n    assert truncate_number(-5.0) == 0.0\n    assert truncate_number(-10.0) == 0.0\n\ndef test_truncate_number_none_input():\n    # Test None input - should raise TypeError\n    with pytest.raises(TypeError):\n        truncate_number(None)\n\ndef test_truncate_number_string_input():\n    # Test string input - should raise TypeError\n    with pytest.raises(TypeError):\n        truncate_number(\"3.5\")\n\ndef test_truncate_number_list_input():\n    # Test list input - should raise TypeError\n    with pytest.raises(TypeError):\n        truncate_number([3.5])\n\ndef test_truncate_number_infinity():\n    # Test infinity input\n    with pytest.raises((OverflowError, ValueError)):\n        truncate_number(float('inf'))\n\ndef test_truncate_number_negative_infinity():\n    # Test negative infinity input\n    with pytest.raises((OverflowError, ValueError)):\n        truncate_number(float('-inf'))\n\ndef test_truncate_number_nan():\n    # Test NaN input\n    result = truncate_number(float('nan'))\n    assert math.isnan(result)\n\ndef test_truncate_number_boolean_input():\n    # Test boolean input (should work as bool converts to int)\n    assert truncate_number(True) == 0.0\n    assert truncate_number(False) == 0.0\n\ndef test_truncate_number_complex_input():\n    # Test complex number input - should raise TypeError\n    with pytest.raises(TypeError):\n        truncate_number(3+4j)\n```"
+    },
+    {
+      "iteration": 2,
+      "description": "LLM-generated tests (iteration 2)",
+      "line_coverage": 100.0,
+      "branch_coverage": 0,
+      "lines_covered": 4,
+      "lines_total": 4,
+      "branches_covered": 0,
+      "branches_total": 0,
+      "tests_passed": 18,
+      "tests_failed": 5,
+      "num_tests": 23,
+      "new_tests_added": 5,
+      "duplicates_removed": 0,
+      "branch_improvement": 0,
+      "line_improvement": 0.0,
+      "prompt": "You are an expert software testing engineer performing iterative test improvement.\n\nProblem Statement:\n\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\nFunction to Test:\n```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n```\n\nCurrent Coverage (Iteration 1):\n- Branch Coverage: 0.0% (0/0 branches)\n- Line Coverage: 100.0%\n- Uncovered: 0 branches remaining\n\nPrevious Tests Generated:\n1 test sets already exist\n\nTask:\nGenerate ADDITIONAL pytest tests to cover the remaining 0 untested branches.\n\nFocus Areas:\n- Target basic conditional branches\n- Test simple if/else paths\n\nOutput Format:\nProvide ONLY valid Python pytest code with no markdown or explanations.\nGenerate 3-5 NEW test functions different from existing tests.\nUse descriptive function names like test_{function_name}_<scenario>.",
+      "llm_response": "```python\nimport pytest\n\ndef test_truncate_number_whole_number():\n    assert truncate_number(5.0) == 0.0\n\ndef test_truncate_number_small_decimal():\n    assert abs(truncate_number(1.1) - 0.1) < 1e-10\n\ndef test_truncate_number_large_number():\n    assert abs(truncate_number(100.75) - 0.75) < 1e-10\n\ndef test_truncate_number_very_small_positive():\n    assert abs(truncate_number(0.001) - 0.001) < 1e-10\n\ndef test_truncate_number_nine_decimal_places():\n    assert abs(truncate_number(2.123456789) - 0.123456789) < 1e-10\n```"
+    },
+    {
+      "iteration": 3,
+      "description": "LLM-generated tests (iteration 3)",
+      "line_coverage": 100.0,
+      "branch_coverage": 0,
+      "lines_covered": 4,
+      "lines_total": 4,
+      "branches_covered": 0,
+      "branches_total": 0,
+      "tests_passed": 21,
+      "tests_failed": 5,
+      "num_tests": 26,
+      "new_tests_added": 3,
+      "duplicates_removed": 2,
+      "branch_improvement": 0,
+      "line_improvement": 0.0,
+      "prompt": "You are an expert software testing engineer performing iterative test improvement.\n\nProblem Statement:\n\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\nFunction to Test:\n```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n```\n\nCurrent Coverage (Iteration 2):\n- Branch Coverage: 0.0% (0/0 branches)\n- Line Coverage: 100.0%\n- Uncovered: 0 branches remaining\n\nPrevious Tests Generated:\n2 test sets already exist\n\nTask:\nGenerate ADDITIONAL pytest tests to cover the remaining 0 untested branches.\n\nFocus Areas:\n- Target basic conditional branches\n- Test simple if/else paths\n\nOutput Format:\nProvide ONLY valid Python pytest code with no markdown or explanations.\nGenerate 3-5 NEW test functions different from existing tests.\nUse descriptive function names like test_{function_name}_<scenario>.",
+      "llm_response": "```python\nimport pytest\n\ndef test_truncate_number_zero():\n    assert truncate_number(0.0) == 0.0\n\ndef test_truncate_number_large_integer_with_decimal():\n    assert truncate_number(1000.123) == pytest.approx(0.123, rel=1e-9)\n\ndef test_truncate_number_very_small_decimal():\n    assert truncate_number(5.00001) == pytest.approx(0.00001, rel=1e-9)\n\ndef test_truncate_number_nine_decimal_places():\n    assert truncate_number(2.123456789) == pytest.approx(0.123456789, rel=1e-9)\n\ndef test_truncate_number_almost_integer():\n    assert truncate_number(7.999999) == pytest.approx(0.999999, rel=1e-9)\n```"
+    }
+  ],
+  "prompts_used": [
+    {
+      "iteration": 1,
+      "prompt": "You are an expert software testing engineer. Generate comprehensive pytest unit tests to improve code coverage.\n\nProblem Statement:\n\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\nFunction to Test:\n```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n```\n\nCurrent Coverage:\n- Branch Coverage: 0.0%\n- Line Coverage: 100.0%\n\nTask:\nGenerate a comprehensive pytest test suite that increases branch coverage. Focus on:\n\n1. Edge Cases: Empty inputs, None values, boundary conditions\n2. Error Paths: Invalid inputs that should raise exceptions\n3. Branch Coverage: Test all conditional paths (if/else branches)\n4. Data Variations: Different data types, sizes, and patterns\n\nOutput Format:\nProvide ONLY valid Python pytest code with no markdown formatting or explanations.\nInclude:\n- Necessary imports (pytest, etc.)\n- Multiple test functions with descriptive names\n- Use pytest.raises() for exception testing\n- Comments explaining what each test validates\n\nGenerate at least 8-12 distinct test cases covering different scenarios.",
+      "timestamp": "2025-11-12T22:30:52.176172"
+    },
+    {
+      "iteration": 2,
+      "prompt": "You are an expert software testing engineer performing iterative test improvement.\n\nProblem Statement:\n\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\nFunction to Test:\n```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n```\n\nCurrent Coverage (Iteration 1):\n- Branch Coverage: 0.0% (0/0 branches)\n- Line Coverage: 100.0%\n- Uncovered: 0 branches remaining\n\nPrevious Tests Generated:\n1 test sets already exist\n\nTask:\nGenerate ADDITIONAL pytest tests to cover the remaining 0 untested branches.\n\nFocus Areas:\n- Target basic conditional branches\n- Test simple if/else paths\n\nOutput Format:\nProvide ONLY valid Python pytest code with no markdown or explanations.\nGenerate 3-5 NEW test functions different from existing tests.\nUse descriptive function names like test_{function_name}_<scenario>.",
+      "timestamp": "2025-11-12T22:31:05.868078"
+    },
+    {
+      "iteration": 3,
+      "prompt": "You are an expert software testing engineer performing iterative test improvement.\n\nProblem Statement:\n\n\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    and integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n\n\nFunction to Test:\n```python\ndef truncate_number(number: float) -> float:\n    \"\"\" Given a positive floating point number, it can be decomposed into\n    an integer part (largest integer smaller than given number) and decimals\n    (leftover part always smaller than 1).\n\n    Return the decimal part of the number.\n    >>> truncate_number(3.5)\n    0.5\n    \"\"\"\n    integer_part = int(number)\n    decimal_part = number - integer_part\n    return decimal_part\n```\n\nCurrent Coverage (Iteration 2):\n- Branch Coverage: 0.0% (0/0 branches)\n- Line Coverage: 100.0%\n- Uncovered: 0 branches remaining\n\nPrevious Tests Generated:\n2 test sets already exist\n\nTask:\nGenerate ADDITIONAL pytest tests to cover the remaining 0 untested branches.\n\nFocus Areas:\n- Target basic conditional branches\n- Test simple if/else paths\n\nOutput Format:\nProvide ONLY valid Python pytest code with no markdown or explanations.\nGenerate 3-5 NEW test functions different from existing tests.\nUse descriptive function names like test_{function_name}_<scenario>.",
+      "timestamp": "2025-11-12T22:31:11.086953"
+    }
+  ]
+}

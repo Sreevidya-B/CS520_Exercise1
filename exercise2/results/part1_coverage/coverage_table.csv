@@ -1,0 +1,59 @@
+Problem,Model,Strategy,Tests Passed,Tests Failed,Test Pass %,Line Coverage %,Lines (Covered/Total),Branch Coverage %,Branches (Covered/Total),Interpretation
+HumanEval/0,claude,cot,1,0,100.0,100.0,6/6,100.0,6/6,Complete coverage (100%) - all 6 branches tested
+HumanEval/0,claude,self_debugging,1,0,100.0,100.0,6/6,100.0,6/6,Complete coverage (100%) - all 6 branches tested
+HumanEval/0,claude,self_planning,1,0,100.0,100.0,7/7,100.0,6/6,Complete coverage (100%) - all 6 branches tested
+HumanEval/0,gpt4o,cot,1,0,100.0,100.0,7/7,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/0,gpt4o,self_debugging,1,0,100.0,100.0,7/7,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/0,gpt4o,self_planning,1,0,100.0,100.0,7/7,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/1,claude,cot,1,0,100.0,95.83,16/16,87.5,7/8,Good coverage (88%) - most paths tested
+HumanEval/1,claude,self_debugging,1,0,100.0,95.83,16/16,87.5,7/8,Good coverage (88%) - most paths tested
+HumanEval/1,claude,self_planning,1,0,100.0,95.65,15/15,87.5,7/8,Good coverage (88%) - most paths tested
+HumanEval/1,gpt4o,cot,1,0,100.0,95.83,16/16,87.5,7/8,Good coverage (88%) - most paths tested
+HumanEval/1,gpt4o,self_debugging,1,0,100.0,96.3,17/17,90.0,9/10,High coverage (90%) - 1 untested branches remaining
+HumanEval/1,gpt4o,self_planning,1,0,100.0,95.83,16/16,87.5,7/8,Good coverage (88%) - most paths tested
+HumanEval/10,claude,cot,0,1,0.0,86.67,8/9,83.33,5/6,Tests failed - solution has runtime errors
+HumanEval/10,claude,self_debugging,0,1,0.0,61.54,5/7,50.0,3/6,Tests failed - solution has runtime errors
+HumanEval/10,claude,self_planning,0,1,0.0,86.67,8/9,83.33,5/6,Tests failed - solution has runtime errors
+HumanEval/10,gpt4o,cot,1,0,100.0,88.89,11/12,83.33,5/6,Good coverage (83%) - most paths tested
+HumanEval/10,gpt4o,self_planning,1,0,100.0,88.89,11/12,83.33,5/6,Good coverage (83%) - most paths tested
+HumanEval/100,claude,cot,1,0,100.0,100.0,8/8,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/100,claude,self_debugging,1,0,100.0,100.0,9/9,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/100,claude,self_planning,1,0,100.0,100.0,9/9,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/100,gpt4o,cot,1,0,100.0,100.0,10/10,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/100,gpt4o,self_debugging,1,0,100.0,100.0,11/11,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/100,gpt4o,self_planning,1,0,100.0,100.0,10/10,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/16,claude,cot,1,0,100.0,100.0,4/4,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/16,claude,self_debugging,1,0,100.0,100.0,4/4,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/16,claude,self_planning,1,0,100.0,100.0,4/4,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/16,gpt4o,cot,1,0,100.0,100.0,2/2,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/16,gpt4o,self_debugging,1,0,100.0,100.0,2/2,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/16,gpt4o,self_planning,1,0,100.0,100.0,6/6,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/2,claude,cot,1,0,100.0,100.0,3/3,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/2,claude,self_debugging,1,0,100.0,100.0,2/2,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/2,claude,self_planning,1,0,100.0,100.0,3/3,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/2,gpt4o,cot,1,0,100.0,100.0,4/4,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/2,gpt4o,self_debugging,1,0,100.0,100.0,6/6,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/2,gpt4o,self_planning,1,0,100.0,100.0,4/4,0,0/0,No branches - linear code with 100% line coverage
+HumanEval/20,claude,cot,1,0,100.0,90.0,13/14,83.33,5/6,Good coverage (83%) - most paths tested
+HumanEval/20,claude,self_debugging,1,0,100.0,88.89,11/12,83.33,5/6,Good coverage (83%) - most paths tested
+HumanEval/20,claude,self_planning,1,0,100.0,90.48,14/15,83.33,5/6,Good coverage (83%) - most paths tested
+HumanEval/20,gpt4o,cot,1,0,100.0,100.0,11/11,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/20,gpt4o,self_debugging,1,0,100.0,90.48,14/15,83.33,5/6,Good coverage (83%) - most paths tested
+HumanEval/20,gpt4o,self_planning,1,0,100.0,100.0,11/11,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/25,claude,cot,1,0,100.0,100.0,14/14,100.0,8/8,Complete coverage (100%) - all 8 branches tested
+HumanEval/25,claude,self_debugging,1,0,100.0,92.31,15/16,90.0,9/10,High coverage (90%) - 1 untested branches remaining
+HumanEval/25,claude,self_planning,1,0,100.0,92.59,16/17,90.0,9/10,High coverage (90%) - 1 untested branches remaining
+HumanEval/25,gpt4o,self_debugging,1,0,100.0,100.0,12/12,100.0,8/8,Complete coverage (100%) - all 8 branches tested
+HumanEval/25,gpt4o,self_planning,1,0,100.0,100.0,10/10,100.0,4/4,Complete coverage (100%) - all 4 branches tested
+HumanEval/50,claude,cot,0,1,0.0,50.0,1/2,0,0/0,Tests failed - solution has runtime errors
+HumanEval/50,claude,self_debugging,0,1,0.0,50.0,1/2,0,0/0,Tests failed - solution has runtime errors
+HumanEval/50,claude,self_planning,0,1,0.0,50.0,1/2,0,0/0,Tests failed - solution has runtime errors
+HumanEval/50,gpt4o,cot,0,1,0.0,50.0,1/2,0,0/0,Tests failed - solution has runtime errors
+HumanEval/50,gpt4o,self_debugging,0,1,0.0,50.0,2/4,0,0/0,Tests failed - solution has runtime errors
+HumanEval/50,gpt4o,self_planning,0,1,0.0,50.0,2/4,0,0/0,Tests failed - solution has runtime errors
+HumanEval/75,claude,cot,1,0,100.0,94.87,22/23,93.75,15/16,High coverage (94%) - 1 untested branches remaining
+HumanEval/75,claude,self_debugging,1,0,100.0,92.31,15/16,90.0,9/10,High coverage (90%) - 1 untested branches remaining
+HumanEval/75,claude,self_planning,1,0,100.0,92.31,15/16,90.0,9/10,High coverage (90%) - 1 untested branches remaining
+HumanEval/75,gpt4o,cot,1,0,100.0,91.3,12/13,90.0,9/10,High coverage (90%) - 1 untested branches remaining
+HumanEval/75,gpt4o,self_debugging,1,0,100.0,90.7,21/23,90.0,18/20,High coverage (90%) - 2 untested branches remaining
+HumanEval/75,gpt4o,self_planning,0,1,0.0,100.0,8/8,100.0,8/8,Tests failed - solution has runtime errors

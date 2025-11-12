@@ -1,0 +1,10 @@
+{
+  "total_solutions_tested": 58,
+  "avg_test_pass_percent": 82.76,
+  "avg_line_coverage": 91.28,
+  "avg_branch_coverage": 63.41,
+  "min_branch_coverage": 0,
+  "max_branch_coverage": 100.0,
+  "solutions_with_full_pass": 48,
+  "solutions_with_high_branch": 39
+}
