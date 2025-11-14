@@ -1,4 +1,4 @@
-# COMPSCI 520 - Theory and Practice of Software Engineering - Fall 2025: In-Class Exercises
+# CS520 Exercise 1: Prompting, Debugging and Innovation for Code Generation with LLMs
 
 
 ## 📌 Repository Overview
@@ -36,17 +36,14 @@ Using the programs from Exercise 1, this exercise focuses on:
 
 ### Setup
 
-**1. Configure API keys**
+**Configure API keys in .env file**
 ```bash
-cp .env.example .env
 # Edit .env and add your API keys:
 OPENAI_API_KEY="your-openai-key-here"
 ANTHROPIC_API_KEY="your-anthropic-key-here"
 ```
 
-#### Exercise 1: Complete Pipeline
-
-Run all scripts in sequence to reproduce the entire experiment:
+Run all scripts in sequence to reproduce the entire exercise:
 
 ```bash
 # Part 1: Initial Evaluation
