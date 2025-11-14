@@ -1,0 +1,162 @@
+{
+  "problem_num": "20",
+  "model": "gpt4o",
+  "strategy": "self_debugging",
+  "test_suite_source": "Part 2 improved tests",
+  "total_bugs_injected": 5,
+  "bugs_detected": 5,
+  "bugs_missed": 0,
+  "detection_rate": 100.0,
+  "bug_details": [
+    {
+      "bug_type": "comparison_operator",
+      "tests_passed": 13,
+      "tests_failed": 4,
+      "total_tests": 17,
+      "bug_detected": true,
+      "failed_test_names": [
+        "test_empty_list",
+        "test_single_element",
+        "test_negative_numbers",
+        "test_all_negative_numbers"
+      ],
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- C:\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: S:\\Code\\CS520_Exercise1\nplugins: anyio-4.11.0, cov-7.0.0\ncollecting ... collected 17 items\n\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_find_closest_elements_humaneval PASSED [  5%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_empty_list FAILED [ 11%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_single_element FAILED [ 17%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_two_elements_ordered PASSED [ 23%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_two_elements_reverse_order PASSED [ 29%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_two_identical_elements PASSED [ 35%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_multiple_identical_elements PASSED [ 41%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_closest_elements_example_1 PASSED [ 47%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_closest_elements_example_2 PASSED [ 52%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_unsorted_input PASSED [ 58%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_negative_numbers FAILED [ 64%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_all_negative_numbers FAILED [ 70%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_large_numbers PASSED [ 76%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_very_small_differences PASSED [ 82%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_mixed_integers_and_floats PASSED [ 88%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_zero_difference_in_middle PASSED [ 94%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_long_list_with_closest_at_end PASSED [100%]\n\n================================== FAILURES ===================================\n_______________________________ test_empty_list _______________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_comparison_operator.py:79: in test_empty_list\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n_____________________________ test_single_element _____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_comparison_operator.py:85: in test_single_element\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n____________________________ test_negative_numbers ____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_comparison_operator.py:134: in test_negative_numbers\n    assert result == (-1.0, 0.0)\nE   assert (-2.0, -1.0) == (-1.0, 0.0)\nE     \nE     At index 0 diff: -2.0 != -1.0\nE     \nE     Full diff:\nE       (\nE     +     -2.0,\nE           -1.0,\nE     -     0.0,\nE       )\n__________________________ test_all_negative_numbers __________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_comparison_operator.py:140: in test_all_negative_numbers\n    assert result == (-8.5, -7.0)\nE   assert (-10.0, -8.5) == (-8.5, -7.0)\nE     \nE     At index 0 diff: -10.0 != -8.5\nE     \nE     Full diff:\nE       (\nE     +     -10.0,\nE           -8.5,\nE     -     -7.0,\nE       )\n=========================== short test summary info ===========================\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_empty_list\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_single_element\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_negative_numbers\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_comparison_operator.py::test_all_negative_numbers\n======================== 4 failed, 13 passed in 0.11s =========================\n",
+      "stderr": "",
+      "description": "Comparison error: Uses <= instead of < for distance",
+      "why_realistic": "Common mistake causing incorrect pair selection when distances are equal",
+      "buggy_file": "S:\\Code\\CS520_Exercise1\\exercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\HumanEval_20_bug_comparison_operator.py"
+    },
+    {
+      "bug_type": "missing_self_check",
+      "tests_passed": 13,
+      "tests_failed": 4,
+      "total_tests": 17,
+      "bug_detected": true,
+      "failed_test_names": [
+        "test_empty_list",
+        "test_single_element",
+        "test_negative_numbers",
+        "test_all_negative_numbers"
+      ],
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- C:\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: S:\\Code\\CS520_Exercise1\nplugins: anyio-4.11.0, cov-7.0.0\ncollecting ... collected 17 items\n\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_find_closest_elements_humaneval PASSED [  5%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_empty_list FAILED [ 11%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_single_element FAILED [ 17%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_two_elements_ordered PASSED [ 23%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_two_elements_reverse_order PASSED [ 29%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_two_identical_elements PASSED [ 35%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_multiple_identical_elements PASSED [ 41%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_closest_elements_example_1 PASSED [ 47%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_closest_elements_example_2 PASSED [ 52%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_unsorted_input PASSED [ 58%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_negative_numbers FAILED [ 64%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_all_negative_numbers FAILED [ 70%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_large_numbers PASSED [ 76%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_very_small_differences PASSED [ 82%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_mixed_integers_and_floats PASSED [ 88%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_zero_difference_in_middle PASSED [ 94%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_long_list_with_closest_at_end PASSED [100%]\n\n================================== FAILURES ===================================\n_______________________________ test_empty_list _______________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_missing_self_check.py:79: in test_empty_list\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n_____________________________ test_single_element _____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_missing_self_check.py:85: in test_single_element\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n____________________________ test_negative_numbers ____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_missing_self_check.py:134: in test_negative_numbers\n    assert result == (-1.0, 0.0)\nE   assert (-2.0, -1.0) == (-1.0, 0.0)\nE     \nE     At index 0 diff: -2.0 != -1.0\nE     \nE     Full diff:\nE       (\nE     +     -2.0,\nE           -1.0,\nE     -     0.0,\nE       )\n__________________________ test_all_negative_numbers __________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_missing_self_check.py:140: in test_all_negative_numbers\n    assert result == (-8.5, -7.0)\nE   assert (-10.0, -8.5) == (-8.5, -7.0)\nE     \nE     At index 0 diff: -10.0 != -8.5\nE     \nE     Full diff:\nE       (\nE     +     -10.0,\nE           -8.5,\nE     -     -7.0,\nE       )\n=========================== short test summary info ===========================\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_empty_list\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_single_element\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_negative_numbers\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_missing_self_check.py::test_all_negative_numbers\n======================== 4 failed, 13 passed in 0.16s =========================\n",
+      "stderr": "",
+      "description": "Logic error: Skips valid pairs with same value",
+      "why_realistic": "Incorrectly filters out identical numbers at different positions",
+      "buggy_file": "S:\\Code\\CS520_Exercise1\\exercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\HumanEval_20_bug_missing_self_check.py"
+    },
+    {
+      "bug_type": "wrong_sort",
+      "tests_passed": 13,
+      "tests_failed": 4,
+      "total_tests": 17,
+      "bug_detected": true,
+      "failed_test_names": [
+        "test_empty_list",
+        "test_single_element",
+        "test_negative_numbers",
+        "test_all_negative_numbers"
+      ],
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- C:\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: S:\\Code\\CS520_Exercise1\nplugins: anyio-4.11.0, cov-7.0.0\ncollecting ... collected 17 items\n\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_find_closest_elements_humaneval PASSED [  5%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_empty_list FAILED [ 11%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_single_element FAILED [ 17%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_two_elements_ordered PASSED [ 23%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_two_elements_reverse_order PASSED [ 29%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_two_identical_elements PASSED [ 35%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_multiple_identical_elements PASSED [ 41%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_closest_elements_example_1 PASSED [ 47%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_closest_elements_example_2 PASSED [ 52%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_unsorted_input PASSED [ 58%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_negative_numbers FAILED [ 64%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_all_negative_numbers FAILED [ 70%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_large_numbers PASSED [ 76%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_very_small_differences PASSED [ 82%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_mixed_integers_and_floats PASSED [ 88%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_zero_difference_in_middle PASSED [ 94%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_long_list_with_closest_at_end PASSED [100%]\n\n================================== FAILURES ===================================\n_______________________________ test_empty_list _______________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_wrong_sort.py:79: in test_empty_list\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n_____________________________ test_single_element _____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_wrong_sort.py:85: in test_single_element\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n____________________________ test_negative_numbers ____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_wrong_sort.py:134: in test_negative_numbers\n    assert result == (-1.0, 0.0)\nE   assert (-2.0, -1.0) == (-1.0, 0.0)\nE     \nE     At index 0 diff: -2.0 != -1.0\nE     \nE     Full diff:\nE       (\nE     +     -2.0,\nE           -1.0,\nE     -     0.0,\nE       )\n__________________________ test_all_negative_numbers __________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_wrong_sort.py:140: in test_all_negative_numbers\n    assert result == (-8.5, -7.0)\nE   assert (-10.0, -8.5) == (-8.5, -7.0)\nE     \nE     At index 0 diff: -10.0 != -8.5\nE     \nE     Full diff:\nE       (\nE     +     -10.0,\nE           -8.5,\nE     -     -7.0,\nE       )\n=========================== short test summary info ===========================\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_empty_list\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_single_element\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_negative_numbers\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_wrong_sort.py::test_all_negative_numbers\n======================== 4 failed, 13 passed in 0.10s =========================\n",
+      "stderr": "",
+      "description": "Sorting error: Returns unsorted pair",
+      "why_realistic": "Forgets requirement to return smaller number first",
+      "buggy_file": "S:\\Code\\CS520_Exercise1\\exercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\HumanEval_20_bug_wrong_sort.py"
+    },
+    {
+      "bug_type": "initialization_error",
+      "tests_passed": 13,
+      "tests_failed": 4,
+      "total_tests": 17,
+      "bug_detected": true,
+      "failed_test_names": [
+        "test_empty_list",
+        "test_single_element",
+        "test_negative_numbers",
+        "test_all_negative_numbers"
+      ],
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- C:\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: S:\\Code\\CS520_Exercise1\nplugins: anyio-4.11.0, cov-7.0.0\ncollecting ... collected 17 items\n\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_find_closest_elements_humaneval PASSED [  5%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_empty_list FAILED [ 11%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_single_element FAILED [ 17%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_two_elements_ordered PASSED [ 23%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_two_elements_reverse_order PASSED [ 29%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_two_identical_elements PASSED [ 35%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_multiple_identical_elements PASSED [ 41%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_closest_elements_example_1 PASSED [ 47%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_closest_elements_example_2 PASSED [ 52%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_unsorted_input PASSED [ 58%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_negative_numbers FAILED [ 64%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_all_negative_numbers FAILED [ 70%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_large_numbers PASSED [ 76%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_very_small_differences PASSED [ 82%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_mixed_integers_and_floats PASSED [ 88%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_zero_difference_in_middle PASSED [ 94%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_long_list_with_closest_at_end PASSED [100%]\n\n================================== FAILURES ===================================\n_______________________________ test_empty_list _______________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_initialization_error.py:79: in test_empty_list\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n_____________________________ test_single_element _____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_initialization_error.py:85: in test_single_element\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n____________________________ test_negative_numbers ____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_initialization_error.py:134: in test_negative_numbers\n    assert result == (-1.0, 0.0)\nE   assert (-2.0, -1.0) == (-1.0, 0.0)\nE     \nE     At index 0 diff: -2.0 != -1.0\nE     \nE     Full diff:\nE       (\nE     +     -2.0,\nE           -1.0,\nE     -     0.0,\nE       )\n__________________________ test_all_negative_numbers __________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_initialization_error.py:140: in test_all_negative_numbers\n    assert result == (-8.5, -7.0)\nE   assert (-10.0, -8.5) == (-8.5, -7.0)\nE     \nE     At index 0 diff: -10.0 != -8.5\nE     \nE     Full diff:\nE       (\nE     +     -10.0,\nE           -8.5,\nE     -     -7.0,\nE       )\n=========================== short test summary info ===========================\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_empty_list\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_single_element\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_negative_numbers\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_initialization_error.py::test_all_negative_numbers\n======================== 4 failed, 13 passed in 0.11s =========================\n",
+      "stderr": "",
+      "description": "Initialization error: Uses inf instead of None",
+      "why_realistic": "Different initialization strategy breaking None-check logic",
+      "buggy_file": "S:\\Code\\CS520_Exercise1\\exercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\HumanEval_20_bug_initialization_error.py"
+    },
+    {
+      "bug_type": "index_start",
+      "tests_passed": 13,
+      "tests_failed": 4,
+      "total_tests": 17,
+      "bug_detected": true,
+      "failed_test_names": [
+        "test_empty_list",
+        "test_single_element",
+        "test_negative_numbers",
+        "test_all_negative_numbers"
+      ],
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.0, pytest-9.0.1, pluggy-1.6.0 -- C:\\Python314\\python.exe\ncachedir: .pytest_cache\nrootdir: S:\\Code\\CS520_Exercise1\nplugins: anyio-4.11.0, cov-7.0.0\ncollecting ... collected 17 items\n\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_find_closest_elements_humaneval PASSED [  5%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_empty_list FAILED [ 11%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_single_element FAILED [ 17%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_two_elements_ordered PASSED [ 23%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_two_elements_reverse_order PASSED [ 29%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_two_identical_elements PASSED [ 35%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_multiple_identical_elements PASSED [ 41%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_closest_elements_example_1 PASSED [ 47%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_closest_elements_example_2 PASSED [ 52%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_unsorted_input PASSED [ 58%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_negative_numbers FAILED [ 64%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_all_negative_numbers FAILED [ 70%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_large_numbers PASSED [ 76%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_very_small_differences PASSED [ 82%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_mixed_integers_and_floats PASSED [ 88%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_zero_difference_in_middle PASSED [ 94%]\nexercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_long_list_with_closest_at_end PASSED [100%]\n\n================================== FAILURES ===================================\n_______________________________ test_empty_list _______________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_index_start.py:79: in test_empty_list\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n_____________________________ test_single_element _____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_index_start.py:85: in test_single_element\n    with pytest.raises(ValueError, match=\"The list must contain at least two numbers.\"):\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE <class 'ValueError'>\n____________________________ test_negative_numbers ____________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_index_start.py:134: in test_negative_numbers\n    assert result == (-1.0, 0.0)\nE   assert (-2.0, -1.0) == (-1.0, 0.0)\nE     \nE     At index 0 diff: -2.0 != -1.0\nE     \nE     Full diff:\nE       (\nE     +     -2.0,\nE           -1.0,\nE     -     0.0,\nE       )\n__________________________ test_all_negative_numbers __________________________\nexercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\temp_test_index_start.py:140: in test_all_negative_numbers\n    assert result == (-8.5, -7.0)\nE   assert (-10.0, -8.5) == (-8.5, -7.0)\nE     \nE     At index 0 diff: -10.0 != -8.5\nE     \nE     Full diff:\nE       (\nE     +     -10.0,\nE           -8.5,\nE     -     -7.0,\nE       )\n=========================== short test summary info ===========================\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_empty_list\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_single_element\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_negative_numbers\nFAILED exercise2/results/part3_fault_detection/buggy_versions/problem_20/temp_test_index_start.py::test_all_negative_numbers\n======================== 4 failed, 13 passed in 0.12s =========================\n",
+      "stderr": "",
+      "description": "Indexing error: Starts enumeration at 1 instead of 0",
+      "why_realistic": "Common mistake when wanting 1-indexed positions",
+      "buggy_file": "S:\\Code\\CS520_Exercise1\\exercise2\\results\\part3_fault_detection\\buggy_versions\\problem_20\\HumanEval_20_bug_index_start.py"
+    }
+  ],
+  "summary": {
+    "detected": [
+      {
+        "bug_type": "comparison_operator",
+        "description": "Comparison error: Uses <= instead of < for distance",
+        "tests_failed": 4,
+        "failed_tests": [
+          "test_empty_list",
+          "test_single_element",
+          "test_negative_numbers",
+          "test_all_negative_numbers"
+        ]
+      },
+      {
+        "bug_type": "missing_self_check",
+        "description": "Logic error: Skips valid pairs with same value",
+        "tests_failed": 4,
+        "failed_tests": [
+          "test_empty_list",
+          "test_single_element",
+          "test_negative_numbers",
+          "test_all_negative_numbers"
+        ]
+      },
+      {
+        "bug_type": "wrong_sort",
+        "description": "Sorting error: Returns unsorted pair",
+        "tests_failed": 4,
+        "failed_tests": [
+          "test_empty_list",
+          "test_single_element",
+          "test_negative_numbers",
+          "test_all_negative_numbers"
+        ]
+      },
+      {
+        "bug_type": "initialization_error",
+        "description": "Initialization error: Uses inf instead of None",
+        "tests_failed": 4,
+        "failed_tests": [
+          "test_empty_list",
+          "test_single_element",
+          "test_negative_numbers",
+          "test_all_negative_numbers"
+        ]
+      },
+      {
+        "bug_type": "index_start",
+        "description": "Indexing error: Starts enumeration at 1 instead of 0",
+        "tests_failed": 4,
+        "failed_tests": [
+          "test_empty_list",
+          "test_single_element",
+          "test_negative_numbers",
+          "test_all_negative_numbers"
+        ]
+      }
+    ],
+    "missed": []
+  }
+}

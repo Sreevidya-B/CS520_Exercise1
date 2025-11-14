@@ -1,0 +1,24 @@
+PS S:\Code\CS520_Exercise1> python exercise2\part2_llm_test_improvement.py
+Starting Part 2: LLM-Assisted Test Generation
+============================================================
+
+Problem 10 (gpt4o/cot):
+----------------------------------------
+  Running iterative improvement...
+Completed: 3 iterations
+Baseline: 83.3%
+Final: 83.3%
+Total Improvement: 0.0%
+
+Problem 20 (gpt4o/self_debugging):
+----------------------------------------
+  Running iterative improvement...
+Completed: 1 iterations
+Baseline: 83.3%
+Final: 100.0%
+Total Improvement: 16.7%
+
+============================================================
+
+Generating summary...
+Summary saved to: S:\Code\CS520_Exercise1\exercise2\results\part2_improved_tests\part2_summary.json
