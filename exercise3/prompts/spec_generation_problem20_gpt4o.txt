@@ -1,0 +1,27 @@
+Problem description: From a supplied list of numbers (of length at least two) select and return two that are the closest to each other and return them in order (smaller number, larger number).
+
+Method signature: def find_closest_elements(numbers: List[float]) -> Tuple[float, float]
+
+Please write formal specifications as Python assertions that describe the correct behavior of this method.
+
+Let 'res' denote the expected return value of find_closest_elements().
+
+CRITICAL REQUIREMENTS:
+- Do NOT call find_closest_elements() in your assertions (no self-reference)
+- Do NOT use methods with side effects such as:
+  - print, read, write, input operations
+  - random number generation (random.random(), random.choice(), etc.)
+  - timing functions (time.time(), datetime.now(), etc.)
+  - data structure mutations (list.append(), dict.update(), set.add(), etc.)
+- Express the relationship between inputs and 'res' using pure arithmetic, string operations, and boolean logic only
+
+Generate approximately 5 formal specifications as Python assert statements.
+
+Example format:
+```python
+# Specification 1: [Brief description of property]
+assert [condition about inputs and res]
+
+# Specification 2: [Brief description of property]
+assert [condition about inputs and res]
+```

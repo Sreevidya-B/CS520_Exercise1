@@ -1,0 +1,27 @@
+Problem description: Find the shortest palindrome that begins with a supplied string. Algorithm idea is simple: - Find the longest postfix of supplied string that is a palindrome. - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.
+
+Method signature: def make_palindrome(string: str) -> str
+
+Please write formal specifications as Python assertions that describe the correct behavior of this method.
+
+Let 'res' denote the expected return value of make_palindrome().
+
+CRITICAL REQUIREMENTS:
+- Do NOT call make_palindrome() in your assertions (no self-reference)
+- Do NOT use methods with side effects such as:
+  - print, read, write, input operations
+  - random number generation (random.random(), random.choice(), etc.)
+  - timing functions (time.time(), datetime.now(), etc.)
+  - data structure mutations (list.append(), dict.update(), set.add(), etc.)
+- Express the relationship between inputs and 'res' using pure arithmetic, string operations, and boolean logic only
+
+Generate approximately 5 formal specifications as Python assert statements.
+
+Example format:
+```python
+# Specification 1: [Brief description of property]
+assert [condition about inputs and res]
+
+# Specification 2: [Brief description of property]
+assert [condition about inputs and res]
+```

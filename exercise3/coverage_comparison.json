@@ -1,0 +1,130 @@
+{
+  "problem10_gpt4o": {
+    "baseline": {
+      "stmt_coverage": 88.89,
+      "branch_coverage": 83.33,
+      "num_statements": 12,
+      "covered_statements": 11,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem10\\html\\index.html"
+    },
+    "improved": {
+      "stmt_coverage": 88.89,
+      "branch_coverage": 83.33,
+      "num_statements": 12,
+      "covered_statements": 11,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem10_gpt4o\\html\\index.html"
+    },
+    "comparison": {
+      "problem_num": "10",
+      "model": "gpt4o",
+      "baseline_stmt_cov": 88.89,
+      "improved_stmt_cov": 88.89,
+      "stmt_change": 0.0,
+      "baseline_branch_cov": 83.33,
+      "improved_branch_cov": 83.33,
+      "branch_change": 0.0,
+      "baseline_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem10\\html\\index.html",
+      "improved_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem10_gpt4o\\html\\index.html"
+    }
+  },
+  "problem10_claude": {
+    "baseline": {
+      "stmt_coverage": 88.89,
+      "branch_coverage": 83.33,
+      "num_statements": 12,
+      "covered_statements": 11,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem10\\html\\index.html"
+    },
+    "improved": {
+      "stmt_coverage": 86.67,
+      "branch_coverage": 83.33,
+      "num_statements": 9,
+      "covered_statements": 8,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem10_claude\\html\\index.html"
+    },
+    "comparison": {
+      "problem_num": "10",
+      "model": "claude",
+      "baseline_stmt_cov": 88.89,
+      "improved_stmt_cov": 86.67,
+      "stmt_change": -2.22,
+      "baseline_branch_cov": 83.33,
+      "improved_branch_cov": 83.33,
+      "branch_change": 0.0,
+      "baseline_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem10\\html\\index.html",
+      "improved_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem10_claude\\html\\index.html"
+    }
+  },
+  "problem20_gpt4o": {
+    "baseline": {
+      "stmt_coverage": 90.48,
+      "branch_coverage": 83.33,
+      "num_statements": 15,
+      "covered_statements": 14,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem20\\html\\index.html"
+    },
+    "improved": {
+      "stmt_coverage": 90.48,
+      "branch_coverage": 83.33,
+      "num_statements": 15,
+      "covered_statements": 14,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem20_gpt4o\\html\\index.html"
+    },
+    "comparison": {
+      "problem_num": "20",
+      "model": "gpt4o",
+      "baseline_stmt_cov": 90.48,
+      "improved_stmt_cov": 90.48,
+      "stmt_change": 0.0,
+      "baseline_branch_cov": 83.33,
+      "improved_branch_cov": 83.33,
+      "branch_change": 0.0,
+      "baseline_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem20\\html\\index.html",
+      "improved_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem20_gpt4o\\html\\index.html"
+    }
+  },
+  "problem20_claude": {
+    "baseline": {
+      "stmt_coverage": 90.48,
+      "branch_coverage": 83.33,
+      "num_statements": 15,
+      "covered_statements": 14,
+      "num_branches": 6,
+      "covered_branches": 5,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem20\\html\\index.html"
+    },
+    "improved": {
+      "stmt_coverage": 100.0,
+      "branch_coverage": 100.0,
+      "num_statements": 12,
+      "covered_statements": 12,
+      "num_branches": 6,
+      "covered_branches": 6,
+      "html_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem20_claude\\html\\index.html"
+    },
+    "comparison": {
+      "problem_num": "20",
+      "model": "claude",
+      "baseline_stmt_cov": 90.48,
+      "improved_stmt_cov": 100.0,
+      "stmt_change": 9.52,
+      "baseline_branch_cov": 83.33,
+      "improved_branch_cov": 100.0,
+      "branch_change": 16.67,
+      "baseline_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\baseline_problem20\\html\\index.html",
+      "improved_report": "S:\\Code\\CS520_Exercise1\\exercise3\\coverage_reports\\improved_problem20_claude\\html\\index.html"
+    }
+  }
+}

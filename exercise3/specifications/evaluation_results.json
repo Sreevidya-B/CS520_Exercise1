@@ -1,0 +1,265 @@
+{
+  "problem10_gpt4o": {
+    "problem_num": "10",
+    "model": "gpt4o",
+    "evaluations": [
+      {
+        "spec_number": 1,
+        "problem_num": "10",
+        "model": "gpt4o",
+        "original_assertion": "assert res == res[::-1]",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res == res[::-1]",
+        "explanation": ""
+      },
+      {
+        "spec_number": 2,
+        "problem_num": "10",
+        "model": "gpt4o",
+        "original_assertion": "assert res.startswith(string)",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res.startswith(string)",
+        "explanation": ""
+      },
+      {
+        "spec_number": 3,
+        "problem_num": "10",
+        "model": "gpt4o",
+        "original_assertion": "assert len(res) >= len(string)",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert len(res) >= len(string)",
+        "explanation": ""
+      },
+      {
+        "spec_number": 4,
+        "problem_num": "10",
+        "model": "gpt4o",
+        "original_assertion": "assert string.startswith(added_suffix[::-1])",
+        "is_correct": false,
+        "issues": [
+          "Undefined variable 'added_suffix' - variable definition was not extracted"
+        ],
+        "corrected_assertion": "assert string.startswith(res[len(string):][::-1])",
+        "explanation": "Combined the variable definition inline to make it a single valid assertion"
+      },
+      {
+        "spec_number": 5,
+        "problem_num": "10",
+        "model": "gpt4o",
+        "original_assertion": "assert all((string + string[:i][::-1] != res) for i in range(len(string)))",
+        "is_correct": false,
+        "issues": [
+          "Logic flaw - does not properly verify shortest palindrome property",
+          "Checks inequality but doesn't verify candidates are palindromes",
+          "Complex logic that's difficult to verify correctness"
+        ],
+        "corrected_assertion": "assert len(res) <= len(string) * 2",
+        "explanation": "Simplified to check that result length is bounded (at most twice input length), which is a weaker but verifiable property of shortest palindrome"
+      }
+    ],
+    "accuracy": {
+      "total": 5,
+      "correct": 3,
+      "incorrect": 2,
+      "accuracy_rate": 60.0
+    }
+  },
+  "problem10_claude": {
+    "problem_num": "10",
+    "model": "claude",
+    "evaluations": [
+      {
+        "spec_number": 1,
+        "problem_num": "10",
+        "model": "claude",
+        "original_assertion": "assert all(res[i] == res[len(res)-1-i] for i in range(len(res)//2))",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert all(res[i] == res[len(res)-1-i] for i in range(len(res)//2))",
+        "explanation": ""
+      },
+      {
+        "spec_number": 2,
+        "problem_num": "10",
+        "model": "claude",
+        "original_assertion": "assert res.startswith(string)",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res.startswith(string)",
+        "explanation": ""
+      },
+      {
+        "spec_number": 3,
+        "problem_num": "10",
+        "model": "claude",
+        "original_assertion": "assert len(res) >= len(string)",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert len(res) >= len(string)",
+        "explanation": ""
+      },
+      {
+        "spec_number": 4,
+        "problem_num": "10",
+        "model": "claude",
+        "original_assertion": "assert not any(p.startswith(string) and all(p[i] == p[len(p)-1-i] for i in range(len(p)//2))",
+        "is_correct": false,
+        "issues": [
+          "Incomplete assertion - missing 'for p in' clause due to multi-line extraction issue",
+          "Syntax error - generator expression has no iterable"
+        ],
+        "corrected_assertion": "assert len(res) <= len(string) * 2",
+        "explanation": "Original was incomplete due to multi-line extraction. Simplified to check bounded length property instead of complex shortest-palindrome verification"
+      },
+      {
+        "spec_number": 5,
+        "problem_num": "10",
+        "model": "claude",
+        "original_assertion": "assert (len(string) <= 1) <= (res == string)",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert (len(string) <= 1) <= (res == string)",
+        "explanation": ""
+      }
+    ],
+    "accuracy": {
+      "total": 5,
+      "correct": 4,
+      "incorrect": 1,
+      "accuracy_rate": 80.0
+    }
+  },
+  "problem20_gpt4o": {
+    "problem_num": "20",
+    "model": "gpt4o",
+    "evaluations": [
+      {
+        "spec_number": 1,
+        "problem_num": "20",
+        "model": "gpt4o",
+        "original_assertion": "assert res[0] in numbers and res[1] in numbers and res[0] != res[1]",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res[0] in numbers and res[1] in numbers and res[0] != res[1]",
+        "explanation": ""
+      },
+      {
+        "spec_number": 2,
+        "problem_num": "20",
+        "model": "gpt4o",
+        "original_assertion": "assert res[0] < res[1]",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res[0] < res[1]",
+        "explanation": ""
+      },
+      {
+        "spec_number": 3,
+        "problem_num": "20",
+        "model": "gpt4o",
+        "original_assertion": "assert all(abs(res[1] - res[0]) <= abs(x - y) for x in numbers for y in numbers if x != y)",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert all(abs(res[1] - res[0]) <= abs(x - y) for x in numbers for y in numbers if x != y)",
+        "explanation": ""
+      },
+      {
+        "spec_number": 4,
+        "problem_num": "20",
+        "model": "gpt4o",
+        "original_assertion": "assert len(numbers) >= 2",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert len(numbers) >= 2",
+        "explanation": ""
+      },
+      {
+        "spec_number": 5,
+        "problem_num": "20",
+        "model": "gpt4o",
+        "original_assertion": "assert isinstance(res[0], float) and isinstance(res[1], float)",
+        "is_correct": false,
+        "issues": [
+          "Assertion is unconditional but comment says \"if inputs are float\"",
+          "Fails for valid integer inputs like [1, 2, 3]"
+        ],
+        "corrected_assertion": "assert isinstance(res[0], (int, float)) and isinstance(res[1], (int, float))",
+        "explanation": "Changed to accept both int and float types, making it work for any numeric input"
+      }
+    ],
+    "accuracy": {
+      "total": 5,
+      "correct": 4,
+      "incorrect": 1,
+      "accuracy_rate": 80.0
+    }
+  },
+  "problem20_claude": {
+    "problem_num": "20",
+    "model": "claude",
+    "evaluations": [
+      {
+        "spec_number": 1,
+        "problem_num": "20",
+        "model": "claude",
+        "original_assertion": "assert isinstance(res, tuple) and len(res) == 2",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert isinstance(res, tuple) and len(res) == 2",
+        "explanation": ""
+      },
+      {
+        "spec_number": 2,
+        "problem_num": "20",
+        "model": "claude",
+        "original_assertion": "assert res[0] <= res[1]",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res[0] <= res[1]",
+        "explanation": ""
+      },
+      {
+        "spec_number": 3,
+        "problem_num": "20",
+        "model": "claude",
+        "original_assertion": "assert res[0] in numbers and res[1] in numbers",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert res[0] in numbers and res[1] in numbers",
+        "explanation": ""
+      },
+      {
+        "spec_number": 4,
+        "problem_num": "20",
+        "model": "claude",
+        "original_assertion": "assert all(abs(res[1] - res[0]) <= abs(b - a)",
+        "is_correct": false,
+        "issues": [
+          "Incomplete assertion - missing 'for a/b in numbers' clause due to multi-line extraction",
+          "Syntax error - generator expression has no iterable"
+        ],
+        "corrected_assertion": "assert all(abs(res[1] - res[0]) <= abs(b - a) for a in numbers for b in numbers if b > a)",
+        "explanation": "Combined multi-line assertion into single line with complete generator expression"
+      },
+      {
+        "spec_number": 5,
+        "problem_num": "20",
+        "model": "claude",
+        "original_assertion": "assert len(numbers) >= 2",
+        "is_correct": true,
+        "issues": [],
+        "corrected_assertion": "assert len(numbers) >= 2",
+        "explanation": ""
+      }
+    ],
+    "accuracy": {
+      "total": 5,
+      "correct": 4,
+      "incorrect": 1,
+      "accuracy_rate": 80.0
+    }
+  }
+}

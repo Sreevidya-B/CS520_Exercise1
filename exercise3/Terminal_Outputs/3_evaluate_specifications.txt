@@ -1,0 +1,199 @@
+PS S:\Code\CS520_Exercise1\exercise3> python 3_evaluate_specifications.py
+
+============================================================
+Problem 10 - GPT4O
+============================================================
+
+------------------------------------------------------------
+Specification #1
+------------------------------------------------------------
+assert res == res[::-1]
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #2
+------------------------------------------------------------
+assert res.startswith(string)
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #3
+------------------------------------------------------------
+assert len(res) >= len(string)
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #4
+------------------------------------------------------------
+assert string.startswith(added_suffix[::-1])
+------------------------------------------------------------
+Correct? (y/n): n
+Issue (empty to finish): Undefined variable 'added_suffix' - variable definition was not extracted
+Issue (empty to finish): 
+Corrected assertion: assert string.startswith(res[len(string):][::-1])
+Explanation: Combined the variable definition inline to make it a single valid assertion
+
+------------------------------------------------------------
+Specification #5
+------------------------------------------------------------
+assert all((string + string[:i][::-1] != res) for i in range(len(string)))
+------------------------------------------------------------
+Correct? (y/n): n
+Issue (empty to finish): Logic flaw - does not properly verify shortest palindrome property
+Issue (empty to finish): Checks inequality but doesn't verify candidates are palindromes
+Issue (empty to finish): Complex logic that's difficult to verify correctness
+Issue (empty to finish): 
+Corrected assertion: assert len(res) <= len(string) * 2
+Explanation: Simplified to check that result length is bounded (at most twice input length), which is a weaker but verifiable property of shortest palindrome
+
+Accuracy: 3/5 (60.0%)
+
+============================================================
+Problem 10 - CLAUDE
+============================================================
+
+------------------------------------------------------------
+Specification #1
+------------------------------------------------------------
+assert all(res[i] == res[len(res)-1-i] for i in range(len(res)//2))
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #2
+------------------------------------------------------------
+assert res.startswith(string)
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #3
+------------------------------------------------------------
+assert len(res) >= len(string)
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #4
+------------------------------------------------------------
+assert not any(p.startswith(string) and all(p[i] == p[len(p)-1-i] for i in range(len(p)//2))
+------------------------------------------------------------
+Correct? (y/n): n
+Issue (empty to finish): Incomplete assertion - missing 'for p in' clause due to multi-line extraction issue
+Issue (empty to finish): Syntax error - generator expression has no iterable
+Issue (empty to finish): 
+Corrected assertion: assert len(res) <= len(string) * 2
+Explanation: Original was incomplete due to multi-line extraction. Simplified to check bounded length property instead of complex shortest-palindrome verification
+
+------------------------------------------------------------
+Specification #5
+------------------------------------------------------------
+assert (len(string) <= 1) <= (res == string)
+------------------------------------------------------------
+Correct? (y/n): y
+
+Accuracy: 4/5 (80.0%)
+
+============================================================
+Problem 20 - GPT4O
+============================================================
+
+------------------------------------------------------------
+Specification #1
+------------------------------------------------------------
+assert res[0] in numbers and res[1] in numbers and res[0] != res[1]
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #2
+------------------------------------------------------------
+assert res[0] < res[1]
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #3
+------------------------------------------------------------
+assert all(abs(res[1] - res[0]) <= abs(x - y) for x in numbers for y in numbers if x != y)
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #4
+------------------------------------------------------------
+assert len(numbers) >= 2
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #5
+------------------------------------------------------------
+assert isinstance(res[0], float) and isinstance(res[1], float)
+------------------------------------------------------------
+Correct? (y/n): n
+Issue (empty to finish): Assertion is unconditional but comment says "if inputs are float"
+Issue (empty to finish): Fails for valid integer inputs like [1, 2, 3]
+Issue (empty to finish): 
+Corrected assertion: assert isinstance(res[0], (int, float)) and isinstance(res[1], (int, float))
+Explanation: Changed to accept both int and float types, making it work for any numeric input
+
+Accuracy: 4/5 (80.0%)
+
+============================================================
+Problem 20 - CLAUDE
+============================================================
+
+------------------------------------------------------------
+Specification #1
+------------------------------------------------------------
+assert isinstance(res, tuple) and len(res) == 2
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #2
+------------------------------------------------------------
+assert res[0] <= res[1]
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #3
+------------------------------------------------------------
+assert res[0] in numbers and res[1] in numbers
+------------------------------------------------------------
+Correct? (y/n): y
+
+------------------------------------------------------------
+Specification #4
+------------------------------------------------------------
+assert all(abs(res[1] - res[0]) <= abs(b - a)
+------------------------------------------------------------
+Correct? (y/n): n
+Issue (empty to finish): Incomplete assertion - missing 'for a/b in numbers' clause due to multi-line extraction
+Issue (empty to finish): Syntax error - generator expression has no iterable
+Issue (empty to finish): 
+Corrected assertion: assert all(abs(res[1] - res[0]) <= abs(b - a) for a in numbers for b in numbers if b > a)
+Explanation: Combined multi-line assertion into single line with complete generator expression
+
+------------------------------------------------------------
+Specification #5
+------------------------------------------------------------
+assert len(numbers) >= 2
+------------------------------------------------------------
+Correct? (y/n): y
+
+Accuracy: 4/5 (80.0%)
+
+============================================================
+OVERALL SUMMARY
+============================================================
+problem10_gpt4o: 3/5 (60.0%)
+problem10_claude: 4/5 (80.0%)
+problem20_gpt4o: 4/5 (80.0%)
+problem20_claude: 4/5 (80.0%)
+PS S:\Code\CS520_Exercise1\exercise3>
