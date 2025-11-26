@@ -95,13 +95,6 @@ python exercise2/part3_fault_detection.py
 
 #### Exercise 3: Specification-Guided Test Improvement
 
-This exercise generates and refines formal specifications with LLMs, then uses them to guide test generation and coverage analysis for selected problems.
-
-- **Part 1:** Generate and evaluate specifications for target problems.  
-- **Part 2:** Use specifications to guide test generation and measure coverage improvements.
-
-**Tools:** pytest, pytest-cov, coverage.py
-
 **How to run** (from repo root):
 ```bash
 # Navigate to exercise3 directory
