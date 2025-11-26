@@ -1,0 +1,71 @@
+Problem description: Find the shortest palindrome that begins with a supplied string. Algorithm idea is simple: - Find the longest postfix of supplied string that is a palindrome. - Append to the end of the string reverse of a string prefix that comes before the palindromic suffix.
+
+Method signature: def make_palindrome(string: str) -> str
+
+CORRECTED FORMAL SPECIFICATIONS:
+# Specification 1
+assert res == res[::-1]
+# Specification 2
+assert res.startswith(string)
+# Specification 3
+assert len(res) >= len(string)
+# Specification 4
+assert string.startswith(res[len(string):][::-1])
+# Specification 5
+assert len(res) <= len(string) * 2
+
+Please generate pytest test cases that validate these specifications.
+
+CRITICAL REQUIREMENTS:
+1. Use the fixture pattern to load the solution dynamically
+2. DO NOT hardcode imports - use the fixture 'solution_function'
+3. Each test function must accept 'solution_function' as a parameter
+4. Name tests with prefix: test_spec_guided_make_palindrome_
+5. Include docstring indicating which specification(s) each test validates
+6. Test both normal cases and edge cases
+7. Ensure all tests are independent and can run in any order
+
+REQUIRED TEST FILE STRUCTURE:
+```python
+from pathlib import Path
+import pytest
+import importlib.util
+
+def get_solution_module(model, strategy, problem_num):
+    """Dynamically load the solution module."""
+    workspace_root = Path(r"S:\Code\CS520_Exercise1")
+    solution_path = workspace_root / 'generated_code' / model / strategy / f'HumanEval_{problem_num}_0.py'
+    
+    if not solution_path.exists():
+        raise FileNotFoundError(f"Solution not found: {solution_path}")
+    
+    spec = importlib.util.spec_from_file_location(
+        f"solution_{model}_{strategy}_{problem_num}", 
+        solution_path
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+@pytest.fixture
+def solution_function(request):
+    """Fixture to provide the solution function."""
+    model = request.config.getoption("--model", default="gpt4o")
+    strategy = request.config.getoption("--strategy", default="cot")
+    module = get_solution_module(model, strategy, "10")
+    return getattr(module, "make_palindrome")
+
+def test_spec_guided_make_palindrome_example(solution_function):
+    """Validates Specification 1: [description]"""
+    result = solution_function(test_input)
+    assert condition_from_spec_1
+
+Generate 5-8 comprehensive test functions that:
+
+Cover ALL 5 specifications above
+
+Test edge cases (empty input, single element, boundary values)
+
+Use descriptive test names
+
+Include clear docstrings

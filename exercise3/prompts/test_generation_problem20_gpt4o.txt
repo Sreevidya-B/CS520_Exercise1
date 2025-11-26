@@ -1,0 +1,71 @@
+Problem description: From a supplied list of numbers (of length at least two) select and return two that are the closest to each other and return them in order (smaller number, larger number).
+
+Method signature: def find_closest_elements(numbers: List[float]) -> Tuple[float, float]
+
+CORRECTED FORMAL SPECIFICATIONS:
+# Specification 1
+assert res[0] in numbers and res[1] in numbers and res[0] != res[1]
+# Specification 2
+assert res[0] < res[1]
+# Specification 3
+assert all(abs(res[1] - res[0]) <= abs(x - y) for x in numbers for y in numbers if x != y)
+# Specification 4
+assert len(numbers) >= 2
+# Specification 5
+assert isinstance(res[0], (int, float)) and isinstance(res[1], (int, float))
+
+Please generate pytest test cases that validate these specifications.
+
+CRITICAL REQUIREMENTS:
+1. Use the fixture pattern to load the solution dynamically
+2. DO NOT hardcode imports - use the fixture 'solution_function'
+3. Each test function must accept 'solution_function' as a parameter
+4. Name tests with prefix: test_spec_guided_find_closest_elements_
+5. Include docstring indicating which specification(s) each test validates
+6. Test both normal cases and edge cases
+7. Ensure all tests are independent and can run in any order
+
+REQUIRED TEST FILE STRUCTURE:
+```python
+from pathlib import Path
+import pytest
+import importlib.util
+
+def get_solution_module(model, strategy, problem_num):
+    """Dynamically load the solution module."""
+    workspace_root = Path(r"S:\Code\CS520_Exercise1")
+    solution_path = workspace_root / 'generated_code' / model / strategy / f'HumanEval_{problem_num}_0.py'
+    
+    if not solution_path.exists():
+        raise FileNotFoundError(f"Solution not found: {solution_path}")
+    
+    spec = importlib.util.spec_from_file_location(
+        f"solution_{model}_{strategy}_{problem_num}", 
+        solution_path
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+@pytest.fixture
+def solution_function(request):
+    """Fixture to provide the solution function."""
+    model = request.config.getoption("--model", default="gpt4o")
+    strategy = request.config.getoption("--strategy", default="self_debugging")
+    module = get_solution_module(model, strategy, "20")
+    return getattr(module, "find_closest_elements")
+
+def test_spec_guided_find_closest_elements_example(solution_function):
+    """Validates Specification 1: [description]"""
+    result = solution_function(test_input)
+    assert condition_from_spec_1
+
+Generate 5-8 comprehensive test functions that:
+
+Cover ALL 5 specifications above
+
+Test edge cases (empty input, single element, boundary values)
+
+Use descriptive test names
+
+Include clear docstrings
